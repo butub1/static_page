@@ -12,7 +12,7 @@ jobs:
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: butub1/static_page
-        TARGET_BRANCH: master
+        TARGET_BRANCH: gh_pages
         BUILD_SCRIPT: yarn && yarn docs:build
         BUILD_DIR: docs/.vuepress/dist
         # CNAME: https://www.xxx.com
