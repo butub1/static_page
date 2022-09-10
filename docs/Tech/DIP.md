@@ -45,7 +45,7 @@ sidebarDepth: 2
 
 工程规模大了之后，为了追求复用，往往模块化地去组织代码，比如Aweme --> Studio--> CameraClient --> CreationKit，形成层次化的结构。
 
-![DIP2](DIP2.jpg)
+![DIP2](./DIP2.jpg)
 
 这就导致底层类的更改会导致上层类的变动。Utility Layer的接入方越多，影响越大。
 
