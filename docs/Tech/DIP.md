@@ -17,7 +17,7 @@ sidebarDepth: 2
 如：一个类向另一个类发消息；一个类是另一个类的成员；一个类是另一个类的某个操作参数，等等。
 
 
-![DIP1](./DIP1.jpg)
+![DIP1](./DIP/DIP1.jpg)
 
 
 **直观感受：**
@@ -45,7 +45,7 @@ sidebarDepth: 2
 
 工程规模大了之后，为了追求复用，往往模块化地去组织代码，比如Aweme --> Studio--> CameraClient --> CreationKit，形成层次化的结构。
 
-![DIP2](./DIP2.jpg)
+![DIP2](./DIP/DIP2.jpg)
 
 这就导致底层类的更改会导致上层类的变动。Utility Layer的接入方越多，影响越大。
 
@@ -57,7 +57,7 @@ sidebarDepth: 2
 
 一种解决的方案，就是把依赖倒置。上层模块Policy去依赖<PolicyServiceInterface>，他知道自己需要一个什么样的对象。
 
-![DIP3](./DIP3.jpg)
+![DIP3](./DIP/DIP3.jpg)
 
 依赖关系：Policy #import  <PolicyServiceInterface> #implemenet Machanism   #import <MachanismServiceInterface> #implement Utility
 
@@ -80,11 +80,11 @@ Policy 不需要再引入 Machanism的内容，反而是Machanism要去引入Pol
 
 可以简单Button持有一个Lamp，当Button被点击Poll()的时候，调用Lamp的TurnOn()和TurnOff()方法
 
-![DIP4](./DIP4.jpg)
+![DIP4](./DIP/DIP4.jpg)
 
 代码中：直接持有一个Lamp实例
 
-```Objective-C
+```objectivec
 public class Button
     private Lamp *lamp;
     public void Poll() {
@@ -95,7 +95,7 @@ public class Button
 ```
 当TurnOn是一个空实现的时候，就不亮了。
 
-![DIP5](./DIP5.jpg)
+![DIP5](./DIP/DIP5.jpg)
 
 ## 接口放哪儿
 
@@ -111,7 +111,7 @@ public class Button
 
 * 接口单独放，C++中单独放在一个namespace中，Java中单独放在一个package中。
 
-![DIP6](./DIP6.jpg)
+![DIP6](./DIP/DIP6.jpg)
 
 > 《敏捷软件开发》：注意，这里的倒置不仅仅是依赖关系的倒置，它也是接口所有权的倒置。我们通常会认为工具库应该拥有它们自己的接口。但是当应用了DIP时，我们发现往往是客户拥有抽象接口，而它们的服务者则从这些抽象接口派生。
 
@@ -161,7 +161,7 @@ public class Button
 
 熔炉(FURNACE)
 
-```Objective-C
+```objectivec
 void  Regulate(double minTemp, double maxTemp)
 {
     for(;;) {
@@ -174,7 +174,7 @@ void  Regulate(double minTemp, double maxTemp)
     }
 }
 ```
-```Objective-C
+```objectivec
 void  Regulate(Thermometer &t, Heater &h, double minTemp, double maxTemp)
 {
     for(;;) {
@@ -195,7 +195,7 @@ void  Regulate(Thermometer &t, Heater &h, double minTemp, double maxTemp)
 
 同样实现了依赖关系的倒置，只要t和h实例确实实现了read()等方法就可以。不具备动态多态的开销，不过也无法在运行时替换实例，改动需要重新编译。
 
-```Objective-C
+```objectivec
 
 template <typename THERMOMETER, typename HEATER>
 void  Regulate(THERMOMETER &t, HEATER &h, double minTemp, double maxTemp)
