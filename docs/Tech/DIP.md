@@ -355,10 +355,10 @@ func NewFooController(logger Logger) *FooController {
 
 ## Ref
 
-[Clean Coder Blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) Bob Uncle
+1. [Clean Coder Blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) Bob Uncle
 
-[Python Dependency Inversion Principle – Linisnil](https://www.linisnil.com/articles/python-dependency-inversion-principle/)
+2. [Python Dependency Inversion Principle – Linisnil](https://www.linisnil.com/articles/python-dependency-inversion-principle/)
 
-https://github.com/bxcodec/go-clean-arch
+3. https://github.com/bxcodec/go-clean-arch
 
-[GitHub - sergdort/CleanArchitectureRxSwift: Example of Clean Architecture of iOS app using RxSwift](https://github.com/sergdort/CleanArchitectureRxSwift)
+4. [GitHub - sergdort/CleanArchitectureRxSwift: Example of Clean Architecture of iOS app using RxSwift](https://github.com/sergdort/CleanArchitectureRxSwift)
