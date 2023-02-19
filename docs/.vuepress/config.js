@@ -26,7 +26,8 @@ module.exports = {
 				text: '哲学', items: [
 					{ text: '哲学', link: '/哲学/Description.md'},
 					{ text: '宋明理学15讲', link: '/哲学/宋明理学15讲' },
-					{ text: '新教伦理与资本主义精神', link: '/哲学/新教伦理与资本主义精神' }
+					{ text: '新教伦理与资本主义精神', link: '/哲学/新教伦理与资本主义精神' },
+					{ text: '我的想法', link: '/哲学/我的想法.md'}
 				]
 			},
 			{ text: '杂谈', items : 
