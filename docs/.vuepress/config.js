@@ -9,7 +9,13 @@ module.exports = {
 		logo: '/logo.png',
 		nav: [
 			{ text: 'Home', link: '/' },
-			{ text: '杂谈', link: '/杂谈/' },
+			{ text: '杂谈', items : 
+				[
+					{text:'杂谈', link: '/杂谈/'},
+					{text:'更新部署', link: '/杂谈/更新部署'},
+					{text: '记忆碎片', link: '/杂谈/记忆碎片'}
+				]
+			},
 			{
 				text: 'Tech', items: [
 					{ text: 'DIP', link: '/Tech/DIP' }
