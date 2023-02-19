@@ -10,9 +10,15 @@ module.exports = {
 		nav: [
 			{ text: 'Home', link: '/' },
 
-			{ text: 'iOS', link: '/iOS/' },
+			{ text: 'iOS', 
+				items: [
+					{ text: "iOS", link: '/iOS/'},
+					{ text: "iOS-Demo", link: '/iOS/iOS-Demo.md'}
+				]
+			},
 			{
 				text: 'Tech', items: [
+					{ text: "Tech", link: '/Tech/'},
 					{ text: 'DIP', link: '/Tech/DIP' }
 				]
 			},
