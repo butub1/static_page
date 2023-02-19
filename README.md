@@ -5,6 +5,7 @@
 ## todo
 * 优化一下样式
 * 添加评论插件
+* 添加repo status icon
 
 ## milestone
 * 2022/02/20 start update docs
