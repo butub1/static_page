@@ -2,6 +2,8 @@
 
 在接触`iOS`一年多之后，明显感觉到， `objc`带有一种青黄不接的感觉。一方面市面上的大多数app基于`Swift` 构建，另一方面在国内，大型的app还在继续使用 objc 构建， 团队中的 iOS 新人对于 iOS 开发的兴趣稍显欠缺，因此萌生了些一个 demo app ， 用来方便地构建 demo，来做各种各样的演示。
 
+ * project repo : [https://github.com/butub1/iOS-Demo](https://github.com/butub1/iOS-Demo)
+
 ## 1. 需求
 需求很简单：`方便地构建ViewController`
 
@@ -75,5 +77,34 @@ dm_registerDemo 宏 最终生成”一条分类“，一条 : ) 合乎文法 : )
 }
 ```
 
+## 4. 使用
 
+这就很简单了， 引入宏，注册想要注册的`ViewController`
+
+```objc
+#import "DMSampleViewController.h"
+
+// 1. import Macros
+#import "DMMacros.h" 
+
+// 2. register an item corresponding to your view controller
+dm_registerDemo(DMSampleViewController, {
+    item.identifier = @"Sample.UIButton"; // identifier required
+})
+
+// 3. enjoy coding with this view controller :)
+@interface DMSampleViewController ()
+@end
+
+@implementation DMSampleViewController
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor greenColor];
+}
+@end
+```
+然后做一个简单的`table list`, 获取所有以同样方式注册进来的VC，点击切换。
+
+![demo.gif](./images/demo.gif)
 

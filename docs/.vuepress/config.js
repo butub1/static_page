@@ -12,18 +12,19 @@ module.exports = {
 
 			{ text: 'iOS', 
 				items: [
-					{ text: "iOS", link: '/iOS/'},
+					{ text: "iOS", link: '/iOS/Description.md'},
 					{ text: "iOS-Demo", link: '/iOS/iOS-Demo.md'}
 				]
 			},
 			{
 				text: 'Tech', items: [
-					{ text: "Tech", link: '/Tech/'},
+					{ text: "Tech", link: '/Tech/Description.md'},
 					{ text: 'DIP', link: '/Tech/DIP' }
 				]
 			},
 			{
 				text: '哲学', items: [
+					{ text: '哲学', link: '/哲学/Description.md'},
 					{ text: '宋明理学15讲', link: '/哲学/宋明理学15讲' },
 					{ text: '新教伦理与资本主义精神', link: '/哲学/新教伦理与资本主义精神' }
 				]
