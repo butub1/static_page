@@ -13,7 +13,8 @@ module.exports = {
 			{ text: 'iOS', 
 				items: [
 					{ text: "iOS", link: '/iOS/Description.md'},
-					{ text: "iOS-Demo", link: '/iOS/iOS-Demo.md'}
+					{ text: "iOS-Demo", link: '/iOS/iOS-Demo.md'},
+					{ text: "UIImageView 翻译", link: '/iOS/UIImageView翻译.md'}
 				]
 			},
 			{
