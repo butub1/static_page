@@ -35,7 +35,10 @@ module.exports = {
 				[
 					{text:'构建初衷', link: '/杂谈/'},
 					{text:'更新部署', link: '/杂谈/更新部署'},
-					{text: '记忆碎片', link: '/杂谈/记忆碎片'}
+					{text: '记忆碎片', link: '/杂谈/记忆碎片'},
+					{text: '记录', items: [
+						{text: '杭州-北京', link: '/杂谈/杭州-北京.md'}
+					]}
 				]
 			},
 			{ text: 'github', link: 'https://github.com/butub1/static_page' },
