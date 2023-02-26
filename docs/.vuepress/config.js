@@ -39,7 +39,8 @@ module.exports = {
 					{text: '记忆碎片', link: '/杂谈/记忆碎片'},
 					{text: '博客列表', link:'/杂谈/博客列表'},
 					{text: '记录', items: [
-						{text: '杭州-北京', link: '/杂谈/杭州-北京.md'}
+						{text: '杭州-北京', link: '/杂谈/杭州-北京.md'},
+						{text: '2022年终总结', link: '/杂谈/2022年终总结.md'}
 					]},
 					
 
