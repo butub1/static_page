@@ -8,5 +8,5 @@
 * 添加repo status icon
 
 ## milestone
-* 2022/02/20 start update docs
+* 2023/02/20 start update docs
 * 2022/09/04 init repo
