@@ -55,7 +55,7 @@ function tryRun (fn, times = 3) {
       const gitalk = new Gitalk({
         clientID: 'aeb43e2c0641045ef305', // 第一步注册 OAuth application 后获取到的 Client ID
         clientSecret: 'f56fa0ce4f944c59945ede9c8918ea3d2ee203ff', // 第一步注册 OAuth application 后获取到的 Clien Secret
-        repo: 'github.com/butub1/static_page',
+        repo: 'static_page',
         owner: 'butub1',
         admin: ['butub1'],
         id: location.pathname,      // Ensure uniqueness and length less than 50
