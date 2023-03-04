@@ -51,5 +51,17 @@ module.exports = {
 			{ text: 'github', link: 'https://github.com/butub1/static_page' },
 		],
 		sidebar: 'auto'
-	}
+	},
+	plugins: {
+    '@vssue/vuepress-plugin-vssue': { // 评论插件
+      // 设置 `platform` 而不是 `api`
+      platform: 'github',
+
+      // 其他的 Vssue 配置
+      owner: 'butub1',
+      repo: 'static_page',
+      clientId: 'aeb43e2c0641045ef305',
+      clientSecret: 'f56fa0ce4f944c59945ede9c8918ea3d2ee203ff',
+    },
+  },
 }
