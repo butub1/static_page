@@ -9,12 +9,3 @@
 ## 更新计划
 
 * 2023.2.19 希望2周更新一篇，最少1月1更，字数不少于400行。
-
-<script src="https://utteranc.es/client.js"
-        repo="butub1/static_page"
-        issue-term="pathname"
-        label="Comment"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
