@@ -13,21 +13,34 @@ module.exports = {
 			{ text: 'iOS', 
 				items: [
 					{ text: "iOS 🍎", link: '/iOS/Description.md'},
-					{ text: "iOS-Demo", link: '/iOS/iOS-Demo.md'},
-					{ text: "UIImageView 翻译", link: '/iOS/UIImageView翻译.md'}
+					{ text: "Projects", items: [
+						{ text: "iOS-Demo", link: '/iOS/iOS-Demo.md'},
+						{ text: "Swift", link: '/iOS/Swift.md'}
+					]},
+					{ text: "翻译", items: [
+						{ text: "UIImageView 翻译", link: '/iOS/UIImageView翻译.md'}
+					]}
 				]
 			},
 			{
 				text: 'Tech', items: [
 					{ text: "Tech 🌟", link: '/Tech/Description.md'},
-					{ text: 'DIP', link: '/Tech/DIP' }
+					{ text: "工程", items: [
+						{ text: 'DIP', link: '/Tech/DIP' }
+					]},
+					{ text: "技巧", items: [
+						{text: "Tips", link:'/Tech/Tips'}
+					]}
 				]
 			},
 			{
 				text: '哲学', items: [
 					{ text: '哲学 🤔', link: '/哲学/Description.md'},
-					{ text: '宋明理学15讲', link: '/哲学/宋明理学15讲' },
-					{ text: '新教伦理与资本主义精神', link: '/哲学/新教伦理与资本主义精神' },
+					{ text: '阅读笔记', items: [
+						{ text: '宋明理学15讲', link: '/哲学/宋明理学15讲' },
+						{ text: '新教伦理与资本主义精神', link: '/哲学/新教伦理与资本主义精神' },
+						{ text: '道德情操论', link: '/哲学/道德情操论'}
+					]},
 					{ text: '我的想法', items:[
 						{text : '解释世界', link: '/哲学/解释世界.md'},
 						{ text: '鸡汤', link:'/哲学/鸡汤.md'},
