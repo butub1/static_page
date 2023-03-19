@@ -44,6 +44,10 @@ module.exports = {
 					{ text: '我的想法', items:[
 						{text : '解释世界', link: '/哲学/解释世界.md'},
 						{ text: '鸡汤', link:'/哲学/鸡汤.md'},
+					]},
+					{ text: '哲学史', items:[
+						{text : '西方哲学史', link: '/哲学/哲学史/西方哲学史.md'},
+						// { text: '中国哲学简史', link:'/哲学/哲学史/中国哲学简史.md'},
 					]}
 				]
 			},
