@@ -8,5 +8,6 @@
 * 添加repo status icon
 
 ## milestone
+* 2023/06/23 Update directory structure
 * 2023/02/20 start update docs
 * 2022/09/04 init repo

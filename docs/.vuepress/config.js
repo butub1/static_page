@@ -7,16 +7,40 @@ module.exports = {
 	],
 	themeConfig: {
 		logo: '/logo.png',
+		// displayAllHeaders: true, // 默认值：false
+		sidebar: {
+			'/哲学/': [
+				'',     /* /foo/ */
+				'宋明理学15讲',  /* /foo/one.html */
+				'新教伦理与资本主义精神',   /* /foo/two.html */
+				'西方哲学史',
+				'解释世界',
+				'鸡汤'
+			],
+			'/杂谈/' : [
+				'',
+				'更新部署',
+				// '博客列表',
+				'观影记录',
+			],
+
+			'/iOS/': [
+				'',
+				'UIImageView翻译'
+			],
+			'/Tech/':[
+				'',
+			]
+			// '/page-a',
+			// ['/page-b', 'Explicit link text']
+		},
 		nav: [
 			{ text: 'Home', link: '/' },
 
 			{ text: 'iOS', 
 				items: [
-					{ text: "iOS 🍎", link: '/iOS/Description.md'},
-					{ text: "Projects", items: [
-						{ text: "iOS-Demo", link: '/iOS/iOS-Demo.md'},
-						{ text: "Swift", link: '/iOS/Swift.md'}
-					]},
+					{ text: "iOS 🍎", link: '/iOS/'},
+					
 					{ text: "翻译", items: [
 						{ text: "UIImageView 翻译", link: '/iOS/UIImageView翻译.md'}
 					]}
@@ -24,18 +48,22 @@ module.exports = {
 			},
 			{
 				text: 'Tech', items: [
-					{ text: "Tech 🌟", link: '/Tech/Description.md'},
+					{ text: "Tech 🌟", link: '/Tech/'},
 					{ text: "工程", items: [
 						{ text: 'DIP', link: '/Tech/DIP' }
 					]},
-					{ text: "技巧", items: [
-						{text: "Tips", link:'/Tech/Tips'}
-					]}
+					{ text: "Projects", items: [
+						{ text: "iOS-Demo", link: '/Tech/iOS-Demo.md'},
+						// { text: "Swift", link: '/Tech/Swift.md'}
+					]},
+					// { text: "技巧", items: [
+					// 	{text: "Tips", link:'/Tech/Tips'}
+					// ]}
 				]
 			},
 			{
 				text: '哲学', items: [
-					{ text: '哲学 🤔', link: '/哲学/Description.md'},
+					{ text: '哲学 🤔', link: '/哲学/'},
 					{ text: '阅读笔记', items: [
 						{ text: '宋明理学15讲', link: '/哲学/宋明理学15讲' },
 						{ text: '新教伦理与资本主义精神', link: '/哲学/新教伦理与资本主义精神' },
@@ -46,7 +74,7 @@ module.exports = {
 						{ text: '鸡汤', link:'/哲学/鸡汤.md'},
 					]},
 					{ text: '哲学史', items:[
-						{text : '西方哲学史', link: '/哲学/哲学史/西方哲学史.md'},
+						{text : '西方哲学史', link: '/哲学/西方哲学史.md'},
 						// { text: '中国哲学简史', link:'/哲学/哲学史/中国哲学简史.md'},
 					]}
 				]
@@ -57,10 +85,7 @@ module.exports = {
 					{text:'更新部署', link: '/杂谈/更新部署'},
 					{text: '博客列表', link:'/杂谈/博客列表'},
 					{text: '记录', items: [
-						{text: '记忆碎片📝', link: '/杂谈/记忆碎片'},
 						{text: '观影记录🎬', link: '/杂谈/观影记录'},
-						{text: '杭州-北京', link: '/杂谈/杭州-北京.md'},
-						{text: '2022年终总结', link: '/杂谈/2022年终总结.md'}
 					]},
 					
 
@@ -68,7 +93,7 @@ module.exports = {
 			},
 			{ text: 'github', link: 'https://github.com/butub1/static_page' },
 		],
-		sidebar: 'auto'
+		// sidebar: 'auto'
 	},
 	plugins: [
 		[
