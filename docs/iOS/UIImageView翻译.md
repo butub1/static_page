@@ -1,11 +1,10 @@
-# UIImageView 翻译
-
-
-在界面上展示单张图片， 或者一个图片序列。
+# [UIImageView](https://developer.apple.com/documentation/uikit/uiimageview) 翻译
+| iOS 2.0+ | iPadOS 2.0+ | Mac Catalyst 13.1+ | tvOS 9.0+ | visionOS 1.0+ Beta |
+| --- | --- | --- | --- | --- |
 ```objc
 @interface `UIImageView` : UIView
-Overview
 ```
+## 概览 // Overview
 `UIImageView` 可让你高效地绘制任何可以使用 UIImage 对象指定的图片。例如，你可以使用 `UIImageView` 类来显示许多标准图片文件的内容，例如 JPEG 和 PNG 文件。可以以编程方式或在  StoryBoard 文件中配置 `UIImageView`，并在运行时更改显示的图片。对于动图，可以使用`UIImageView`的方法来启动和停止动画，并指定其他动画参数。
 ## 1. 理解图片是如何被缩放的 //  Understand how images are scaled
 一个 `image view` 使用其 `ContentMode` 属性和图片本身的配置来确定如何显示图片。最好指定尺寸与 `image view` 尺寸完全匹配的图片，但是 `image view` 可以缩放图片以适应全部或部分可用空间。如果 `image view` 本身的大小发生变化，它会根据需要自动缩放图片。\
@@ -113,4 +112,4 @@ For more information, see Localization.
   A view for hosting layered content on top of the `image view`.
  
 ## Ref
-1. [`UIImageView` | Apple Developer Documentation](https://developer.apple.com/documentation/uikit/uiimageview)
+* [`UIImageView` | Apple Developer Documentation](https://developer.apple.com/documentation/uikit/uiimageview)

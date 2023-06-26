@@ -7,8 +7,10 @@ module.exports = {
 	],
 	themeConfig: {
 		logo: '/logo.png',
+		// sidebarDepth : 2,
 		// displayAllHeaders: true, // 默认值：false
 		sidebar: {
+			
 			'/哲学/': [
 				'',     /* /foo/ */
 				'宋明理学15讲',  /* /foo/one.html */
@@ -26,10 +28,22 @@ module.exports = {
 
 			'/iOS/': [
 				'',
-				'UIImageView翻译'
+				'UIImageView翻译',
+				'/PG-ViewController/'
+			],
+			'/PG-ViewController/':[
+				'/iOS/',
+				// '/iOS/UIImageView翻译',
+				'',
+				'Overview',
+				'ViewControllerDefinition',
+				// 'ViewControllerDefinition双语',
+				// 'Overview双语'
 			],
 			'/Tech/':[
 				'',
+				'DIP',
+				'iOS-Demo'
 			]
 			// '/page-a',
 			// ['/page-b', 'Explicit link text']
@@ -42,7 +56,8 @@ module.exports = {
 					{ text: "iOS 🍎", link: '/iOS/'},
 					
 					{ text: "翻译", items: [
-						{ text: "UIImageView 翻译", link: '/iOS/UIImageView翻译.md'}
+						{ text: "UIImageView 翻译", link: '/iOS/UIImageView翻译.md'},
+						{ text: "PG-ViewController 翻译", link: "/PG-ViewController/"}
 					]}
 				]
 			},
@@ -87,8 +102,6 @@ module.exports = {
 					{text: '记录', items: [
 						{text: '观影记录🎬', link: '/杂谈/观影记录'},
 					]},
-					
-
 				]
 			},
 			{ text: 'github', link: 'https://github.com/butub1/static_page' },
