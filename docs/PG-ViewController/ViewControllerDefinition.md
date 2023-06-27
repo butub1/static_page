@@ -1,6 +1,8 @@
-# 二. 定义VC | View Controller Definition
+# 二. 定义VC 📎 View Controller Definition
 
-## 1. 定义你的子类 ｜ define your subclass
+[[toc]]
+
+## 1. 定义你的子类  📎  define your subclass
 
 您可以使用`UIViewController`的自定义子类来呈现app的内容。大多数自定义视图控制器都是内容视图控制器——也就是说，它们拥有自己的所有视图，并对这些视图中的数据负责。相比之下，容器视图控制器并不拥有自己的所有视图；它的一些视图由其他视图控制器管理。定义内容和容器视图控制器的大多数步骤是相同的，将在接下来的部分中讨论。
 
@@ -15,7 +17,7 @@
 对于容器视图控制器，父类的选择，取决于您是修改现有容器类还是创建自己的容器类。对于现有容器，选择要修改的任何视图控制器类。对于新的容器视图控制器，通常是UIViewController的子类。有关创建容器视图控制器的其他信息，请参阅实现容器视图控制器[原文](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html#//apple_ref/doc/uid/TP40007457-CH11-SW1)。
 
 
-### 定义您的UI ｜ Defining Your UI
+### 定义您的UI  📎  Defining Your UI
 
 使用Xcode中的故事板文件直观地定义视图控制器的UI。虽然您也可以通过编程方式创建UI，但故事板是可视化视图控制器内容和针对不同环境自定义视图层次结构（根据需要）的绝佳方式。可视化地构建UI可以让您快速进行更改，并让您无需构建和运行应用程序即可查看结果。
 
@@ -41,7 +43,7 @@
 
 如果您不熟悉使用故事板构建界面，您可以在立即开始开发iOS应用程序（过时）[|原文](https://developer.apple.com/library/archive/referencelibrary/GettingStarted/RoadMapiOS-Legacy/chapters/Introduction.html)中找到创建基于故事板的界面的分步说明。
 
-### 处理用户交互 | Handling User Interactions
+### 处理用户交互 📎 Handling User Interactions
 
 应用程序的`responder`对象处理传入事件并采取适当的操作。虽然视图控制器是响应者对象，但它们很少直接处理触摸事件。相反，视图控制器通常以以下方式处理事件。
 
@@ -79,7 +81,7 @@ class MyViewController: UIViewController {
 在故事板中，请记住将视图控制器的`outlets`和`actions`连接到相应的视图。在故事板文件中连接出口和操作可确保在加载视图时配置它们。有关如何在`Interface Builder`中创建`outlets`和`actions`连接的信息，请参阅`Interface Builder`连接帮助。有关如何处理应用中的事件的信息，请参阅*事件处理指南iOS*。
 
 
-### 在运行时显示您的视图 | Displaying Your Views at Runtime
+### 在运行时显示您的视图 📎 Displaying Your Views at Runtime
 
 故事板使加载和显示视图控制器视图的过程非常简单。UIKit会在需要时自动从故事板文件中加载视图。作为加载过程的一部分，UIKit执行以下任务序列：
 
@@ -113,7 +115,7 @@ class MyViewController: UIViewController {
 
 
 
-### 管理视图布局 | Managing View Layout
+### 管理视图布局 📎 Managing View Layout
 
 当视图的大小和位置发生变化时，UIKit会更新视图层次结构的布局信息。对于使用自动布局配置的视图，UIKit会启动自动布局引擎，并使用它根据当前约束更新布局。UIKit还允许其他感兴趣的对象（例如活动表示控制器）了解布局更改，以便它们可以做出相应的响应。
 
@@ -149,25 +151,25 @@ class MyViewController: UIViewController {
 
 有关表示控制器及其在视图控制器体系结构中扮演的角色的信息，请参阅呈现和转换处理[|原文](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/PresentingaViewController.html#//apple_ref/doc/uid/TP40007457-CH14-SW7)。
 
-### 有效管理内存 | Managing Memory Efficiently
+### 有效管理内存 📎 Managing Memory Efficiently
 
 尽管内存分配的大多数方面由您决定，但表4-1列出了`UIViewController`最有可能分配或释放内存的方法。大多数释放涉及删除对对象的强引用。要删除对对象的强引用，请将指向该对象的属性和变量设置为`nil`。
 
 表4-1分配和释放内存的位置
 
-| task | method | Discussion |
-| --- | --- | --- |
-| 分配VC需的关键数据结构。 | Initialization methods | 您的自定义初始化方法（无论是命名为init还是其他名称）总是负责将您的视图控制器对象置于已知的良好状态。使用这些方法来分配确保正确操作所需的任何数据结构。 |
-| 分配或加载要在视图中显示的data。 | viewDidLoad | 使用viewDidLoad方法加载您要显示的任何数据对象。调用此方法时，您的视图对象保证存在并处于已知的良好状态。 |
-| 响应低内存通知。 | `didReceiveMemoryWarning` | 使用此方法释放与视图控制器关联的所有非关键对象。尽可能多地释放内存。 |
-| 释放VC所需的关键数据结构。 | dealloc | 重写此方法只是为了对视图控制器类执行`last-minute`的清理。系统会自动释放存储在类的实例变量和属性中的对象，因此您不需要显式释放这些对象。 |
+| task 📎 method 📎 Discussion |
+| --- 📎 --- 📎 --- |
+| 分配VC需的关键数据结构。 📎 Initialization methods 📎 您的自定义初始化方法（无论是命名为init还是其他名称）总是负责将您的视图控制器对象置于已知的良好状态。使用这些方法来分配确保正确操作所需的任何数据结构。 |
+| 分配或加载要在视图中显示的data。 📎 viewDidLoad 📎 使用viewDidLoad方法加载您要显示的任何数据对象。调用此方法时，您的视图对象保证存在并处于已知的良好状态。 |
+| 响应低内存通知。 📎 `didReceiveMemoryWarning` 📎 使用此方法释放与视图控制器关联的所有非关键对象。尽可能多地释放内存。 |
+| 释放VC所需的关键数据结构。 📎 dealloc 📎 重写此方法只是为了对视图控制器类执行`last-minute`的清理。系统会自动释放存储在类的实例变量和属性中的对象，因此您不需要显式释放这些对象。 |
 
 
-## 2. 实现容器视图控制器 | Implementing a Container View Controller
+## 2. 实现容器视图控制器 📎 Implementing a Container View Controller
 
 容器视图控制器是一种将来自多个视图控制器的内容组合成单个用户交互界面的方法。容器视图控制器最常用于促进导航和基于现有内容创建新的用户交互界面类型。UIKit中容器视图控制器的示例包括`UINavigationController`、`UITabBarController`和`UISplitViewController`，所有这些都有助于用户交互界面不同部分之间的导航。
 
-### 设计自定义容器视图控制器 ｜ Designing a Custom Container View Controller
+### 设计自定义容器视图控制器  📎  Designing a Custom Container View Controller
 
 在几乎所有方面，容器视图控制器都像任何其他内容视图控制器一样，它管理根视图和一些内容。不同之处在于容器视图控制器从其他视图控制器获取部分内容。它获取的内容仅限于其他视图控制器的视图，它将这些视图嵌入到自己的视图层次结构中。容器视图控制器设置任何嵌入视图的大小和位置，但原始视图控制器仍然管理这些视图中的内容。
 
@@ -192,7 +194,7 @@ class MyViewController: UIViewController {
 在您定义了各种对象的角色之后，容器视图控制器的实现相对简单。UIKit的唯一要求是您在容器视图控制器和任何子视图控制器之间建立正式的父子关系。父子关系确保子视图接收任何相关的系统消息。除此之外，大多数实际工作发生在包含视图的布局和管理期间，这对于每个容器都是不同的。您可以将视图放置在容器内容区域的任何位置，并根据需要调整这些视图的大小。您还可以将自定义视图添加到视图层次结构中，以提供装饰或帮助导航。
 
 
-### Example: Navigation Controller | Example: Navigation Controller
+### Example: Navigation Controller 📎 Example: Navigation Controller
 
 一个`UINavigationController`对象用于支持对分层的数据集合进行导航。导航界面一次显示一个子视图控制器。界面顶部的导航栏显示数据层次结构中的当前位置，并显示后退按钮以后退一级。向下导航到数据层次结构留给子视图控制器，并且可能涉及使用表格或按钮。
 
@@ -206,7 +208,7 @@ class MyViewController: UIViewController {
 
 在`compact(紧凑)`和`regular(常规)`环境中，导航控制器一次只显示一个子视图控制器。导航控制器调整其子视图控制器的大小以适应可用空间。
 
-### Example: Split View Controller | Example: Split View Controller
+### Example: Split View Controller 📎 Example: Split View Controller
 
 一个`UISplitViewController`对象以`master-details`排列显示两个视图控制器的内容。在这种排列中，一个视图控制器（master）的内容决定了另一个视图控制器显示哪些细节。两个视图控制器的可见性是可配置的，但也受当前环境的支配。在`regular`水平环境中，`split view controller`可以并排显示两个子视图控制器，也可以隐藏主视图并根据需要显示。在`compact`环境中，`split view controller`一次只显示一个视图控制器。
 
@@ -216,7 +218,7 @@ class MyViewController: UIViewController {
 
 ![](./images/VCPG-split-view-inerface_5-2_2x.png)
 
-### 在Interface Builder中配置容器 | Configuring a Container in Interface Builder
+### 在Interface Builder中配置容器 📎 Configuring a Container in Interface Builder
 
 要在设计时创建父子容器关系，请将容器视图对象添加到故事板场景中，如图5-3所示。容器视图对象是表示子视图控制器内容的`placeholder`对象。使用该视图相对于容器中的其他视图调整子视图的大小和位置。
 
@@ -228,12 +230,12 @@ class MyViewController: UIViewController {
 
 如果不使用`Interface Builder`设置父子容器关系，则必须通过将每个子容器添加到容器视图控制器里面，来以编程方式创建这些关系，如*将子视图控制器添加到您的内容中*[|原文](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html#//apple_ref/doc/uid/TP40007457-CH11-SW13)所述。
 
-### 实现自定义容器视图控制器 | Implementing a Custom Container View Controller
+### 实现自定义容器视图控制器 📎 Implementing a Custom Container View Controller
 
 要实现容器视图控制器，您必须在视图控制器与其子视图控制器之间建立关系。在尝试管理任何子视图控制器的视图之前，需要建立这些父子关系。这样做可以让UIKit知道您的视图控制器正在管理子视图的大小和位置。您可以在Interface Builder中创建这些关系或以编程方式创建它们。以编程方式创建父子关系时，您可以显式添加和删除子视图控制器，作为视图控制器设置的一部分。
 
 
-### 将子视图控制器添加到您的内容上 | Adding a Child View Controller to Your Content
+### 将子视图控制器添加到您的内容上 📎 Adding a Child View Controller to Your Content
 
 要以编程方式将子视图控制器合并到您的内容中，请通过执行以下操作在相关视图控制器之间创建父子关系：
 
@@ -266,7 +268,7 @@ class MyViewController: UIViewController {
 
 使用自动布局时，在将子视图添加到容器的视图层次结构后，在容器和子视图之间设置约束。您的约束应该只影响子视图的根视图的大小和位置。不要更改根视图或子视图层次结构中的任何其他视图的内容。
 
-### 删除子视图控制器 | Removing a Child View Controller
+### 删除子视图控制器 📎 Removing a Child View Controller
 
 要从内容中删除子视图控制器，请通过执行以下操作删除视图控制器之间的父子关系：
 
@@ -291,7 +293,7 @@ class MyViewController: UIViewController {
 }
 ```
 
-### 子视图控制器之间的转换 | Transitioning Between Child View Controllers
+### 子视图控制器之间的转换 📎 Transitioning Between Child View Controllers
 
 当您想用另一个子视图控制器替换时，将子视图控制器的添加和删除合并到过渡动画过程中。在动画之前，确保两个子视图控制器都是您内容的一部分，但让当前子视图知道它即将消失。在动画期间，将新子视图移动到适当的位置并删除旧子视图。动画完成时，完成子视图控制器的删除。
 
@@ -326,7 +328,7 @@ class MyViewController: UIViewController {
         }];
 }
 ```
-### 管理子VC的外观更新 | Managing Appearance Updates for Children
+### 管理子VC的外观更新 📎 Managing Appearance Updates for Children
 
 将子VC添加到容器后，容器会自动将外观相关消息转发给子级。这通常是您想要的行为，因为它确保所有事件都正确发送。但是，有时默认行为可能会以对您的容器没有意义的顺序发送这些事件。例如，如果多个子级同时更改其视图状态，您可能希望合并更改，以便外观回调以更合乎逻辑的顺序同时发生。
 
@@ -360,7 +362,7 @@ class MyViewController: UIViewController {
     [self.child endAppearanceTransition];
 }
 ```
-### 关于构建容器视图控制器的建议 | Suggestions for Building a Container View Controller
+### 关于构建容器视图控制器的建议 📎 Suggestions for Building a Container View Controller
 
 设计、开发和测试新的容器视图控制器需要时间。尽管单个行为很简单，但控制器作为一个整体可能相当复杂。在实现自己的容器类时，请考虑以下提示：
 
@@ -370,7 +372,7 @@ class MyViewController: UIViewController {
 
 * **首先使用常规视图设计容器**。使用常规视图（而不是来自子视图控制器的视图）使您有机会在简化的环境中测试布局约束和动画转换。当常规视图按预期工作时，将它们交换为子视图控制器的视图。
 
-### 将控制委托给子视图控制器｜Delegating Control to a Child View Controller
+### 将控制委托给子视图控制器 📎 Delegating Control to a Child View Controller
 
 容器视图控制器可以将其自身外观的某些方面委托给它的一个或多个子级。您可以通过以下方式委托控制：
 
@@ -378,7 +380,7 @@ class MyViewController: UIViewController {
 
 * **让子视图控制器指定自己的首选大小**。具有灵活布局的容器可以使用子VC自己的`preferredContentSize`属性来帮助确定子VC的大小。
 
-## 3. 支持无障碍 | Supporting Accessibility
+## 3. 支持无障碍 📎 Supporting Accessibility
 
 无障碍app是指每个人都可以使用的应用程序——包括残疾人或身体障碍者——同时保留其功能和可用性作为有用工具。为了便于无障碍使用，iOS应用程序必须向`Voiceover`提供有关其用户交互界面元素的信息，以便视力受损的用户可以与这些元素进行交互。默认情况下，UIKit定义的对象是可访问的，但从视图控制器的角度来看，您仍然可以做一些事情来解决可访问性问题，包括以下内容：
 
@@ -388,7 +390,7 @@ class MyViewController: UIViewController {
 
 您可以通过以编程方式设置`Voiceover`焦点环的位置、响应特殊的`Voiceover`手势以及监听无障碍通知来增强`Voiceover`用户在您的应用中的体验。
 
-### 将`VoiceOver`(画外音)光标移动到特定元素 ｜ Moving the VoiceOver Cursor to a Specific Element
+### 将`VoiceOver`(画外音)光标移动到特定元素  📎  Moving the VoiceOver Cursor to a Specific Element
 
 当您的应用在屏幕上显示新视图时，请考虑设置将`VoiceOver`光标的位置。当屏幕布局发生变化时，`VoiceOver`焦点环（也称为`VoiceOver`光标）会从左到右和从上到下将其位置重置为屏幕上显示的第一个元素。将光标放在更合适的元素上可以加快用户对界面的导航速度。例如，当将新的视图控制器推送到导航控制器的堆栈上时，`VoiceOver`光标会落在导航栏的后退按钮上。您可能希望将光标移动到导航栏的标题或新推送页面上的元素上。
 
@@ -410,7 +412,7 @@ class MyViewController: UIViewController {
 
 布局更改，包括旋转引起的更改，会重置Voiceover光标的位置。当视图控制器的布局发生更改时，发布通知`UIAccessibilityLayoutChangedNotification`。与`UIAccessibilityScreenChangedNotification`通知一样，您可以指定要成为Voiceover的新第一个元素的对象。
 
-### 回应特定的画外音手势 | Responding to Special VoiceOver Gestures
+### 回应特定的画外音手势 📎 Responding to Special VoiceOver Gestures
 
 * `Voiceover`定义了五种特殊手势来触发特定于应用程序的操作。
 
@@ -432,23 +434,23 @@ class MyViewController: UIViewController {
 所有特殊的Voiceover手势方法都返回一个布尔值，该值决定是否通过响应链传播。要停止传播，返回YES；否则，返回NO。
 :::
 
-### 退出 | Escape
+### 退出 📎 Escape
 
 使用`accessibilityPerformEscape`方法处理`Escape`手势。对于覆盖内容的视图（例如模态对话框或警报），使用该方法关闭覆盖。`Escape`手势的功能类似于计算机键盘上的Esc键的功能；它取消临时对话框或工作表以显示主要内容。您还可以使用`Escape`手势在自定义导航层次结构中向后导航一层。如果您已经在使用已经处理此手势的`UINavigationController`对象，则不需要实现此手势。
 
-### 两指双击 ｜ Magic Tap
+### 两指双击  📎  Magic Tap
 
 使用`accessibilityPerformMagicTap`方法处理`Magic Tap`手势。`Magic Tap`手势可快速执行常用或最有意义的操作。例如，在电话应用中，`Magic Tap`接听或挂断电话，在时钟应用中，`Magic Tap`启动和停止秒表。您可以使用此手势触发不一定与`Voiceover`光标突出显示的元素相关的操作。要从应用中的任何位置处理`Magic Tap`手势，请在应用委托中实现`accessibilityPerformMagicTap`方法。
 
-### 三指滚动 | Three-Finger Scroll
+### 三指滚动 📎 Three-Finger Scroll
 
 当`Voiceover`用户执行三指滚动手势时，使用`accessibilityScroll:`方法滚动自定义视图的内容。显示书籍页面的自定义视图可能使用此手势翻页。传递给该方法的参数指示滚动方向。
 
-### 增大和减小 | Increment and Decrement
+### 增大和减小 📎 Increment and Decrement
 
 使用`accessibilityIncrement`和`accessibilityDecrement`方法来增加或减少元素中的值。具有`UIAccessibilityTraitAdjustable`的元素必须实现此方法。
 
-### 监听无障碍通知 ｜ Observing Accessibility Notifications
+### 监听无障碍通知  📎  Observing Accessibility Notifications
 
 UIKit发送无障碍功能通知，通知您的应用有关相关事件。您的应用的对象可以观察任何相关通知，并使用它们来执行适当的任务。例如，iBooks应用使用 `UIAccessibilityAnnouncementDidFinishNotification`通知翻页，并在`Voiceover`说完页面上的最后一行时继续阅读。这种行为提供了无缝、不间断的阅读体验。
 

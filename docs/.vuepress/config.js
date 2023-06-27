@@ -37,7 +37,7 @@ module.exports = {
 				'',
 				'Overview',
 				'ViewControllerDefinition',
-				// 'ViewControllerDefinition双语',
+				'ViewControllerDefinition双语',
 				// 'Overview双语'
 			],
 			'/Tech/':[

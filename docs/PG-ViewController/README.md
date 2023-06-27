@@ -1,4 +1,4 @@
-# [View Controller Programming Guide for iOS](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html) 翻译
+# 翻译 🍔 [View Controller Programming Guide for iOS](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html)
 
 [一. 概述](./Overview.md)
 
