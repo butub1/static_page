@@ -1,5 +1,5 @@
-# 概述 📎 Overview 双语
-## VC的作用 📎 The Role of View Controllers
+# 概述 🍟 Overview 双语
+## VC的作用 🍟 The Role of View Controllers
 
 View controllers are the foundation of your app’s internal structure. Every app has at least one view controller, and most apps have several. Each view controller manages a portion of your app’s user interface as well as the interactions between that interface and the underlying data. View controllers also facilitate transitions between different parts of your user interface.
 
@@ -25,7 +25,7 @@ Most apps are a mixture of both types of view controllers.
 
 大多数应用程序是两种类型的`view controller`的混合体。
 
-### 视图管理 📎 View Management
+### 视图管理 🍟 View Management
 
 The most important role of a view controller is to manage a hierarchy of views. Every view controller has a single root view that encloses all of the view controller’s content. To that root view, you add the views you need to display your content. Figure 1-1 illustrates the built-in relationship between the view controller and its views. The view controller always has a reference to its root view and each view has strong references to its subviews.
 
@@ -79,7 +79,7 @@ A UIDocument object is one way to manage your data separately from your view con
 
 一个`UIDocument`对象是一种与`view controller`分开管理数据的方法。`UIDocument`对象是一个控制器对象，它知道如何读取和写入数据到持久存储。当您子类化时，您可以添加提取数据所需的任何逻辑和方法，并将其传递给`view controller`或应用程序的其他部分。`view controller`可能会存储它接收到的任何数据的副本，以便更容易更新视图，但文档仍然拥有真实的数据。
 
-### 用户交互 📎 User Interactions
+### 用户交互 🍟 User Interactions
 
 View controllers are responder objects and are capable of handling events that come down the responder chain. Although they are able to do so, view controllers rarely handle touch events directly. Instead, views usually handle their own touch events and report the results to a method of an associated delegate or target object, which is usually the view controller. So most events in a view controller are handled using delegate methods or action methods.
 
@@ -89,7 +89,7 @@ For more information about implementing action methods in your view controller, 
 
 有关在`view controller`中实现操作方法的详细信息，请参阅处理用户交互。有关处理其他类型事件的信息，请参阅iOS的事件处理指南[|原文](https:|developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/DefiningYourSubclass.html#|apple_ref/doc/uid/TP40007457-CH7-SW11)。
 
-### 资源管理 📎 Resource Management
+### 资源管理 🍟 Resource Management
 
 A view controller assumes all responsibility for its views and any objects that it creates. The UIViewController class handles most aspects of view management automatically. For example, UIKit automatically releases any view-related resources that are no longer needed. In your UIViewController subclasses, you are responsible for managing any objects you create explicitly.
 
@@ -100,7 +100,7 @@ When the available free memory is running low, UIKit asks apps to free up any re
 当可用内存不足时，`UIKit`会要求应用程序释放它们不再需要的任何资源。一种方法是调用`view controller`的`didReceiveMemoryWarning`方法。使用该方法删除对不再需要或以后可以轻松重新创建的对象的引用。例如，您可以使用该方法删除缓存数据。当内存不足的情况发生时，尽可能多地释放内存非常重要。消耗过多内存的应用程序可能会被系统直接终止以恢复内存。
 
 
-### 设备适配 📎 Adaptivity
+### 设备适配 🍟 Adaptivity
 
 View controllers are responsible for the presentation of their views and for adapting that presentation to match the underlying environment. Every iOS app should be able to run on iPad and on several different sizes of iPhone. Rather than provide different view controllers and view hierarchies for each device, it is simpler to use a single view controller that adapts its views to the changing space requirements.
 
@@ -124,13 +124,13 @@ For more information about adaptivity, see The Adaptive Model.
 
 有关适应性的更多信息，请参阅自适应模型[|原文](https:|developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/TheAdaptiveModel.html#|apple_ref/doc/uid/TP40007457-CH19-SW1)。
 
-## `view controller`层次结构 📎 [The View Controller Hierarchy](https:|developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#|apple_ref/doc/uid/TP40007457-CH2-SW1)
+## `view controller`层次结构 🍟 [The View Controller Hierarchy](https:|developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/index.html#|apple_ref/doc/uid/TP40007457-CH2-SW1)
 
 The relationships among your app’s view controllers define the behaviors required of each view controller. UIKit expects you to use view controllers in prescribed ways. Maintaining the proper view controller relationships ensures that automatic behaviors are delivered to the correct view controllers when they are needed. If you break the prescribed containment and presentation relationships, portions of your app will stop behaving as expected.
 
 app 的 `view controller`之间的关系，定义了每个`view controller`所需的行为。`UIKit`预期是您以规范的方式来使用`view controller`。维护`view controller`的正确关系，可确保在需要时，将自动行为传递给正确的`view controller`。如果您破坏了规范的包含和表示关系，您的应用程序的某些部分将不会按预期运行。
 
-### `root view Controller` 📎 `The Root View Controller`
+### `root view Controller` 🍟 `The Root View Controller`
 
 The root view controller is the anchor of the view controller hierarchy. Every window has exactly one root view controller whose content fills that window. The root view controller defines the initial content seen by the user. Figure 2-1 shows the relationship between the root view controller and the window. Because the window has no visible content of its own, the view controller’s view provides all of the content.
 
@@ -146,7 +146,7 @@ The root view controller is accessible from the rootViewController property of t
 
 `root view controller`可从`UIWindow`对象的[`rootViewController`](https://developer.apple.com/documentation/uikit/uiwindow/1621581-rootviewcontroller)属性访问。当您使用故事板配置`view controller`时，`UIKit`会在启动时自动设置该属性的值。对于以编程方式创建的窗口，您必须自己设置`root view controller`。
 
-### `container view controller` 📎 Container View Controllers
+### `container view controller` 🍟 Container View Controllers
 
 Container view controllers let you assemble sophisticated interfaces from more manageable and reusable pieces. A container view controller mixes the content of one or more child view controllers together with optional custom views to create its final interface. For example, a UINavigationController object displays the content from a child view controller together with a navigation bar and optional toolbar, which are managed by the navigation controller. UIKit includes several container view controllers, including UINavigationController, UISplitViewController, and UIPageViewController.
 
@@ -164,10 +164,10 @@ Figure 2-2A container acting as the root view controller
 
 Because a container view controller manages its children, UIKit defines rules for how you set up those children in custom containers. For detailed information about how to create a custom container view controller, see Implementing a Container View Controller.
 
-因为`container view controller`管理其子VC，`UIKit`定义了如何在自定义容器中设置这些子VC的规则。有关如何创建自定义`container view controller`的详细信息，请参阅实现`container view controller` 📎 [原文](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html#//apple_ref/doc/uid/TP40007457-CH11-SW1)。
+因为`container view controller`管理其子VC，`UIKit`定义了如何在自定义容器中设置这些子VC的规则。有关如何创建自定义`container view controller`的详细信息，请参阅实现`container view controller` 🍟 [原文](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html#//apple_ref/doc/uid/TP40007457-CH11-SW1)。
 
 
-### 呈现`view controller` 📎 Presented View Controllers
+### 呈现`view controller` 🍟 Presented View Controllers
 
 Presenting a view controller replaces the current view controller’s contents with those of a new one, usually hiding the previous view controller’s contents. Presentations are most often used for displaying new content modally. For example, you might present a view controller to gather input from the user. You can also use them as a general building block for your app’s interface.
 
@@ -201,13 +201,13 @@ For information about presentations, see The Presentation and Transition Process
 
 有关呈现VC的信息，请参阅呈现和转场处理[原文](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/PresentingaViewController.html#//apple_ref/doc/uid/TP40007457-CH14-SW7)。
 
-## 设计技巧 📎 Design Tips
+## 设计技巧 🍟 Design Tips
 
 View controllers are an essential tool for apps running on iOS, and the view controller infrastructure of UIKit makes it easy to create sophisticated interfaces without writing a lot of code. When implementing your own view controllers, use the following tips and guidelines to ensure that you are not doing things that might interfere with the natural behavior expected by the system.
 
 视图控制器是在iOS上运行的应用程序必不可少的工具，UIKit的视图控制器基础架构使得无需编写大量代码即可轻松创建复杂的界面。在实现您自己的视图控制器时，请使用以下提示和指南来确保您没有做可能干扰系统预期的自然行为的事情。
 
-### 尽可能使用系统提供的视图控制器 📎 Use System-Supplied View Controllers Whenever Possible
+### 尽可能使用系统提供的视图控制器 🍟 Use System-Supplied View Controllers Whenever Possible
 
 Many iOS frameworks define view controllers that you can use as-is in your apps. Using these system-supplied view controllers saves time for you and ensures a consistent experience for the user.
 
@@ -278,7 +278,7 @@ For information about using a specific view controller, see the reference docume
 
 有关使用特定视图控制器的信息，请参阅相应框架的参考文档。
 
-### 使每个视图控制器成为一个孤岛  📎  Make Each View Controller an Island
+### 使每个视图控制器成为一个孤岛  🍟  Make Each View Controller an Island
 
 View controllers should always be self-contained objects. No view controller should have knowledge about the internal workings or view hierarchy of another view controller. In cases where two view controllers need to communicate or pass data back and forth, they should always do so using explicitly defined public interfaces.
 
@@ -288,13 +288,13 @@ The delegation design pattern is frequently used to manage communication between
 
 经常使用委托设计模式来管理视图控制器之间的通信。通过委托，一个对象定义了一个与关联委托对象通信的协议，委托对象是符合协议的任何对象。委托对象的确切类型并不重要。重要的是它实现了协议的方法。
 
-### 仅将根视图用作其他视图的容器  📎  Use the Root View Only as a Container for Other Views
+### 仅将根视图用作其他视图的容器  🍟  Use the Root View Only as a Container for Other Views
 
 Use the root view of your view controller solely as a container for the rest of your content. Using the root view as a container gives all of your views a common parent view, which makes many layout operations simpler. Many Auto Layout constraints require a common parent view to lay out the views properly.
 
 仅将视图控制器的根视图用作其余内容的容器。将根视图用作容器为所有视图提供了一个通用的父视图，这使得许多布局操作更简单。许多自动布局约束需要一个通用的父视图来正确布局视图。
 
-### 知道您的数据存储在哪里  📎  Know Where Your Data Lives
+### 知道您的数据存储在哪里  🍟  Know Where Your Data Lives
 
 In the model-view-controller design pattern, a view controller’s role is to facilitate the movement of data between your model objects and your view objects. A view controller might store some data in temporary variables and perform some validation, but its main responsibility is to ensure that its views contain accurate information. Your data objects are responsible for managing the actual data and for ensuring the overall integrity of that data.
 
@@ -304,7 +304,7 @@ An example of the separation of data and interface exists in the relationship be
 
 数据和接口分离的一个例子存在于`UIDocument`和`UIViewController`类之间的关系中。具体来说，两者之间不存在默认关系。`UIDocument`对象处理数据的加载和保存，而`UIViewController`对象处理视图在屏幕上的显示。如果您在两个对象之间创建关系，请记住视图控制器应该只缓存`UIDocument`中的信息以提高效率。实际数据仍然属于`UIDocument`对象。
 
-### 设备适配 📎 Adapt to Changes
+### 设备适配 🍟 Adapt to Changes
 
 Apps can run on a variety of iOS devices, and view controllers are designed to adapt to different-sized screens on those devices. Rather than use separate view controllers to manage content on different screens, use the built-in adaptivity support to respond to size and size class changes in your view controllers. The notifications sent by UIKit give you the opportunity to make both large-scale and small-scale changes to your user interface without having to change the rest of your view controller code.
 

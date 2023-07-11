@@ -2,7 +2,7 @@
 
 [[toc]]
 
-## 1. 定义你的子类 📎   define your subclass
+## 1. 定义你的子类 🍟   define your subclass
 
 You use custom subclasses of UIViewController to present your app’s content. Most custom view controllers are content view controllers—that is, they own all of their views and are responsible for the data in those views. By contrast, a container view controller does not own all of its views; some of its views are managed by other view controllers. Most of the steps for defining content and container view controllers are the same and are discussed in the sections that follow.
 
@@ -29,7 +29,7 @@ For container view controllers, the parent class depends on whether you are modi
 对于容器视图控制器，父类的选择，取决于您是修改现有容器类还是创建自己的容器类。对于现有容器，选择要修改的任何视图控制器类。对于新的容器视图控制器，通常是UIViewController的子类。有关创建容器视图控制器的其他信息，请参阅实现容器视图控制器[原文](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html#//apple_ref/doc/uid/TP40007457-CH11-SW1)。
 
 
-### 定义您的UI 📎 Defining Your UI
+### 定义您的UI 🍟 Defining Your UI
 
 Define the UI for your view controller visually using storyboard files in Xcode. Although you can also create your UI programmatically, storyboards are an excellent way to visualize your view controller’s content and customize your view hierarchy (as needed) for different environments. Building your UI visually lets you make changes quickly and lets you see the results without having to build and run your app.
 
@@ -77,7 +77,7 @@ If you are new to using storyboards to build your interface, you can find step-b
 
 如果您不熟悉使用故事板构建界面，您可以在立即开始开发iOS应用程序（过时）[|原文](https://developer.apple.com/library/archive/referencelibrary/GettingStarted/RoadMapiOS-Legacy/chapters/Introduction.html)中找到创建基于故事板的界面的分步说明。
 
-### 处理用户交互 📎 Handling User Interactions
+### 处理用户交互 🍟 Handling User Interactions
 
 An app’s responder objects process incoming events and take appropriate actions. Although view controllers are responder objects, they rarely process touch events directly. Instead, view controllers typically handle events in the following ways.
 
@@ -133,7 +133,7 @@ In your storyboard, remember to connect your view controller’s outlets and act
 在故事板中，请记住将视图控制器的`outlets`和`actions`连接到相应的视图。在故事板文件中连接出口和操作可确保在加载视图时配置它们。有关如何在`Interface Builder`中创建`outlets`和`actions`连接的信息，请参阅`Interface Builder`连接帮助。有关如何处理应用中的事件的信息，请参阅*事件处理指南iOS*。
 
 
-### 在运行时显示您的视图 📎 Displaying Your Views at Runtime
+### 在运行时显示您的视图 🍟 Displaying Your Views at Runtime
 
 Storyboards make the process of loading and displaying your view controller’s views very simple. UIKit automatically loads views from your storyboard file when they are needed. As part of the loading process, UIKit performs the following sequence of tasks:
 
@@ -198,7 +198,7 @@ For information about how to create views without using storyboards, see the vie
 
 
 
-### 管理视图布局 📎 Managing View Layout
+### 管理视图布局 🍟 Managing View Layout
 
 When the size and position of views changes, UIKit updates the layout information for your view hierarchy. For views configured using Auto Layout, UIKit engages the Auto Layout engine and uses it to update the layout according to the current constraints. UIKit also lets other interested objects, such as the active presentation controller, know abut the layout changes so that they can respond accordingly.
 
@@ -268,7 +268,7 @@ For information about presentation controllers and the role they play in the vie
 
 有关表示控制器及其在视图控制器体系结构中扮演的角色的信息，请参阅呈现和转换处理[|原文](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/PresentingaViewController.html#//apple_ref/doc/uid/TP40007457-CH14-SW7)。
 
-### 有效管理内存 📎 Managing Memory Efficiently
+### 有效管理内存 🍟 Managing Memory Efficiently
 
 Although most aspects of memory allocation are for you to decide, Table 4-1 lists the methods of UIViewController where you are most likely to allocate or deallocate memory. Most deallocations involve removing strong references to objects. To remove a strong reference to an object, set properties and variables pointing to that object to nil.
 
@@ -278,27 +278,27 @@ Table 4-1Places to allocate and deallocate memory
 
 表4-1分配和释放内存的位置
 
-| Task 📎 Methods 📎 Discussion |
-| --- 📎 --- 📎 --- |
-| Allocate critical data structures required by your view controller. 📎 Initialization methods 📎 Your custom initialization method (whether it is named init or something else) is always responsible for putting your view controller object into a known good state. Use these methods to allocate whatever data structures are needed to ensure proper operation. |
-| Allocate or load data to be displayed in your view. 📎 viewDidLoad 📎 Use the viewDidLoad method to load any data objects you intend to display. By the time this method is called, your view objects are guaranteed to exist and to be in a known good state. |
-| Respond to low-memory notifications. 📎 didReceiveMemoryWarning 📎 Use this method to deallocate all noncritical objects associated with your view controller. Deallocate as much memory as you can. |
-| Release critical data structures required by your view controller. 📎 dealloc 📎 Override this method only to perform any last-minute cleanup of your view controller class. The system automatically releases objects stored in instance variables and properties of your class, so you do not need to release those explicitly. |
+| Task | Methods | Discussion |
+| --- | --- | --- |
+| Allocate critical data structures required by your view controller. | Initialization methods | Your custom initialization method (whether it is named init or something else) is always responsible for putting your view controller object into a known good state. Use these methods to allocate whatever data structures are needed to ensure proper operation. |
+| Allocate or load data to be displayed in your view. | viewDidLoad | Use the viewDidLoad method to load any data objects you intend to display. By the time this method is called, your view objects are guaranteed to exist and to be in a known good state. |
+| Respond to low-memory notifications. |didReceiveMemoryWarning | Use this method to deallocate all noncritical objects associated with your view controller. Deallocate as much memory as you can. |
+| Release critical data structures required by your view controller. | dealloc | Override this method only to perform any last-minute cleanup of your view controller class. The system automatically releases objects stored in instance variables and properties of your class, so you do not need to release those explicitly. |
 
-| task 📎 method 📎 Discussion |
-| --- 📎 --- 📎 --- |
-| 分配VC需的关键数据结构。 📎 Initialization methods 📎 您的自定义初始化方法（无论是命名为init还是其他名称）总是负责将您的视图控制器对象置于已知的良好状态。使用这些方法来分配确保正确操作所需的任何数据结构。 |
-| 分配或加载要在视图中显示的data。 📎 viewDidLoad 📎 使用viewDidLoad方法加载您要显示的任何数据对象。调用此方法时，您的视图对象保证存在并处于已知的良好状态。 |
-| 响应低内存通知。 📎 `didReceiveMemoryWarning` 📎 使用此方法释放与视图控制器关联的所有非关键对象。尽可能多地释放内存。 |
-| 释放VC所需的关键数据结构。 📎 dealloc 📎 重写此方法只是为了对视图控制器类执行`last-minute`的清理。系统会自动释放存储在类的实例变量和属性中的对象，因此您不需要显式释放这些对象。 |
+| task | method | Discussion |
+| --- | --- | --- | 
+| 分配VC需的关键数据结构。 | `Initialization methods` | 您的自定义初始化方法（无论是命名为init还是其他名称）总是负责将您的视图控制器对象置于已知的良好状态。使用这些方法来分配确保正确操作所需的任何数据结构。 |
+| 分配或加载要在视图中显示的data。| `viewDidLoad` | 使用viewDidLoad方法加载您要显示的任何数据对象。调用此方法时，您的视图对象保证存在并处于已知的良好状态。 | 
+| 响应低内存通知。 | `didReceiveMemoryWarning` | 使用此方法释放与视图控制器关联的所有非关键对象。尽可能多地释放内存。 | 
+| 释放VC所需的关键数据结构。 | `dealloc` | 重写此方法只是为了对视图控制器类执行`last-minute`的清理。系统会自动释放存储在类的实例变量和属性中的对象，因此您不需要显式释放这些对象。|
 
-## 2. 实现容器视图控制器 📎 Implementing a Container View Controller
+## 2. 实现容器视图控制器 🍟 Implementing a Container View Controller
 
 Container view controllers are a way to combine the content from multiple view controllers into a single user interface. Container view controllers are most often used to facilitate navigation and to create new user interface types based on existing content. Examples of container view controllers in UIKit include UINavigationController, UITabBarController, and UISplitViewController, all of which facilitate navigation between different parts of your user interface.
 
 容器视图控制器是一种将来自多个视图控制器的内容组合成单个用户交互界面的方法。容器视图控制器最常用于促进导航和基于现有内容创建新的用户交互界面类型。UIKit中容器视图控制器的示例包括`UINavigationController`、`UITabBarController`和`UISplitViewController`，所有这些都有助于用户交互界面不同部分之间的导航。
 
-### 设计自定义容器视图控制器 📎 Designing a Custom Container View Controller
+### 设计自定义容器视图控制器 🍟 Designing a Custom Container View Controller
 
 In almost every way, a container view controller is like any other content view controller in that it manages a root view and some content. The difference is that a container view controller gets part of its content from other view controllers. The content it gets is limited to the other view controllers’ views, which it embeds inside its own view hierarchy. The container view controller sets the size and position of any embedded views, but the original view controllers still manage the content inside those views.
 
@@ -345,7 +345,7 @@ The implementation of a container view controller is relatively straightforward 
 在您定义了各种对象的角色之后，容器视图控制器的实现相对简单。UIKit的唯一要求是您在容器视图控制器和任何子视图控制器之间建立正式的父子关系。父子关系确保子视图接收任何相关的系统消息。除此之外，大多数实际工作发生在包含视图的布局和管理期间，这对于每个容器都是不同的。您可以将视图放置在容器内容区域的任何位置，并根据需要调整这些视图的大小。您还可以将自定义视图添加到视图层次结构中，以提供装饰或帮助导航。
 
 
-### Example: Navigation Controller 📎 Example: Navigation Controller
+### Example: Navigation Controller 🍟 Example: Navigation Controller
 
 A UINavigationController object supports navigation through a hierarchical data set. A navigation interface presents one child view controller at a time. A navigation bar at the top of the interface displays the current position in the data hierarchy and displays a back button to move back one level. Navigation down into the data hierarchy is left to the child view controller and can involve the use of tables or buttons.
 
@@ -369,7 +369,7 @@ In both compact and regular environments, a navigation controller displays only 
 
 在`compact(紧凑)`和`regular(常规)`环境中，导航控制器一次只显示一个子视图控制器。导航控制器调整其子视图控制器的大小以适应可用空间。
 
-### Example: Split View Controller 📎 Example: Split View Controller
+### Example: Split View Controller 🍟 Example: Split View Controller
 
 A UISplitViewController object displays the content of two view controllers in a master-detail arrangement. In this arrangement, the content of one view controller (the master) determines what details are displayed by the other view controller. The visibility of the two view controllers is configurable but is also governed by the current environment. In a regularly horizontal environment, the split view controller can show both child view controllers side-by-side or it can hide the master and display it as needed. In a compact environment, the split view controller displays only one view controller at a time.
 
@@ -385,7 +385,7 @@ Figure 5-2A split view interface
 
 ![](./images/VCPG-split-view-inerface_5-2_2x.png)
 
-### 在Interface Builder中配置容器 📎 Configuring a Container in Interface Builder
+### 在Interface Builder中配置容器 🍟 Configuring a Container in Interface Builder
 
 To create a parent-child container relationship at design time, add a container view object to your storyboard scene, as shown in Figure 5-3. A container view object is a placeholder object that represents the contents of a child view controller. Use that view to size and position the child’s root view in relation to the other views in the container.
 
@@ -405,14 +405,14 @@ If you do not use Interface Builder to set up your parent-child container relati
 
 如果不使用`Interface Builder`设置父子容器关系，则必须通过将每个子容器添加到容器视图控制器里面，来以编程方式创建这些关系，如*将子视图控制器添加到您的内容中*[|原文](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html#//apple_ref/doc/uid/TP40007457-CH11-SW13)所述。
 
-### 实现自定义容器视图控制器 📎 Implementing a Custom Container View Controller
+### 实现自定义容器视图控制器 🍟 Implementing a Custom Container View Controller
 
 To implement a container view controller, you must establish relationships between your view controller and its child view controllers. Establishing these parent-child relationships is required before you try to manage the views of any child view controllers. Doing so lets UIKit know that your view controller is managing the size and position of the children. You can create these relationships in Interface Builder or create them programmatically. When creating parent-child relationships programmatically, you explicitly add and remove child view controllers as part of your view controller setup.
 
 要实现容器视图控制器，您必须在视图控制器与其子视图控制器之间建立关系。在尝试管理任何子视图控制器的视图之前，需要建立这些父子关系。这样做可以让UIKit知道您的视图控制器正在管理子视图的大小和位置。您可以在Interface Builder中创建这些关系或以编程方式创建它们。以编程方式创建父子关系时，您可以显式添加和删除子视图控制器，作为视图控制器设置的一部分。
 
 
-### 将子视图控制器添加到您的内容上 📎 Adding a Child View Controller to Your Content
+### 将子视图控制器添加到您的内容上 🍟 Adding a Child View Controller to Your Content
 
 To incorporate a child view controller into your content programmatically, create a parent-child relationship between the relevant view controllers by doing the following:
 
@@ -467,7 +467,7 @@ When using Auto Layout, set up constraints between the container and child after
 
 使用自动布局时，在将子视图添加到容器的视图层次结构后，在容器和子视图之间设置约束。您的约束应该只影响子视图的根视图的大小和位置。不要更改根视图或子视图层次结构中的任何其他视图的内容。
 
-### 删除子视图控制器 📎 Removing a Child View Controller
+### 删除子视图控制器 🍟 Removing a Child View Controller
 
 To remove a child view controller from your content, remove the parent-child relationship between the view controllers by doing the following:
 
@@ -508,7 +508,7 @@ Listing 5-2Removing a child view controller from a container
 }
 ```
 
-### 子视图控制器之间的转换 📎 Transitioning Between Child View Controllers
+### 子视图控制器之间的转换 🍟 Transitioning Between Child View Controllers
 
 When you want to animate the replacement of one child view controller with another, incorporate the addition and removal of the child view controllers into the transition animation process. Before the animations, make sure both child view controllers are part of your content but let the current child know that it is about to go away. During your animations, move the new child’s view into position and remove the old child’s view. At the completion of the animation, complete the removal of the child view controller.
 
@@ -549,7 +549,7 @@ Listing 5-3Transitioning between two child view controllers
         }];
 }
 ```
-### 管理子VC的外观更新 📎 Managing Appearance Updates for Children
+### 管理子VC的外观更新 🍟 Managing Appearance Updates for Children
 
 After adding a child to a container, the container automatically forwards appearance-related messages to the child. This is normally the behavior you want, because it ensures that all events are properly sent. However, sometimes the default behavior may send those events in an order that doesn’t make sense for your container. For example, if multiple children are simultaneously changing their view state, you may want to consolidate the changes so that the appearance callbacks all happen at the same time in a more logical order.
 
@@ -593,7 +593,7 @@ Listing 5-5Forwarding appearance messages when the container appears or disappea
     [self.child endAppearanceTransition];
 }
 ```
-### 关于构建容器视图控制器的建议 📎 Suggestions for Building a Container View Controller
+### 关于构建容器视图控制器的建议 🍟 Suggestions for Building a Container View Controller
 
 Designing, developing, and testing a new container view controller takes time. Although the individual behaviors are straightforward, the controller as a whole can be quite complex. Consider the following tips when implementing your own container classes:
 
@@ -611,7 +611,7 @@ Designing, developing, and testing a new container view controller takes time. A
 
 * **首先使用常规视图设计容器**。使用常规视图（而不是来自子视图控制器的视图）使您有机会在简化的环境中测试布局约束和动画转换。当常规视图按预期工作时，将它们交换为子视图控制器的视图。
 
-### 将控制委托给子视图控制器｜Delegating Control to a Child View Controller
+### 将控制委托给子视图控制器 🍟 Delegating Control to a Child View Controller
 
 A container view controller can delegate some aspects of its own appearance to one or more of its children. You can delegate control in the following ways:
 
@@ -625,7 +625,7 @@ Let the child specify its own preferred size. A container with a flexible layout
 
 * **让子视图控制器指定自己的首选大小**。具有灵活布局的容器可以使用子VC自己的`preferredContentSize`属性来帮助确定子VC的大小。
 
-## 3. 支持无障碍 📎 Supporting Accessibility
+## 3. 支持无障碍 🍟 Supporting Accessibility
 
 An accessible app is one that can be used by everyone—including those with a disability or physical impairment—while retaining its functionality and usability as a helpful tool. To be accessible, an iOS app must supply information about its user interface elements to VoiceOver, so that vision-impaired users can interact with those elements. UIKit objects are accessible by default, but there are still things you can do from the view controller’s perspective to address accessibility, including the following:
 
@@ -643,7 +643,7 @@ You can enhance the VoiceOver user’s experience in your app by setting the pos
 
 您可以通过以编程方式设置`Voiceover`焦点环的位置、响应特殊的`Voiceover`手势以及监听无障碍通知来增强`Voiceover`用户在您的应用中的体验。
 
-### 将`VoiceOver`(画外音)光标移动到特定元素 📎 Moving the VoiceOver Cursor to a Specific Element
+### 将`VoiceOver`(画外音)光标移动到特定元素 🍟 Moving the VoiceOver Cursor to a Specific Element
 
 When your app presents new views onscreen, consider setting the position of the VoiceOver cursor. When the layout of a screen changes, the VoiceOver focus ring, also known as the VoiceOver cursor, resets its position to the first element displayed on the screen from left to right and top to bottom. Placing the cursor over a more appropriate element can speed the user’s navigation of your interface. For example, when pushing a new view controller onto a navigation controller’s stack, the VoiceOver cursor falls on the Back button of the navigation bar. You might want to move that cursor to the heading of the navigation bar or to an element on the newly pushed page.
 
@@ -673,7 +673,7 @@ Layout changes, including those caused by rotations, reset the position of the V
 
 布局更改，包括旋转引起的更改，会重置Voiceover光标的位置。当视图控制器的布局发生更改时，发布通知`UIAccessibilityLayoutChangedNotification`。与`UIAccessibilityScreenChangedNotification`通知一样，您可以指定要成为Voiceover的新第一个元素的对象。
 
-### 回应特定的画外音手势 📎 Responding to Special VoiceOver Gestures
+### 回应特定的画外音手势 🍟 Responding to Special VoiceOver Gestures
 
 VoiceOver defines five special gestures for triggering app-specific actions.
 
@@ -715,31 +715,31 @@ All special VoiceOver gesture methods return a Boolean value that determine whet
 所有特殊的Voiceover手势方法都返回一个布尔值，该值决定是否通过响应链传播。要停止传播，返回YES；否则，返回NO。
 :::
 
-### 退出 📎 Escape
+### 退出 🍟 Escape
 
 Use the accessibilityPerformEscape method to handle the Escape gesture. For a view that overlays content—such as a modal dialog or an alert—use the method to dismiss the overlay. The function of the Escape gesture is like the function of the Esc key on a computer keyboard; it cancels a temporary dialog or sheet to reveal the main content. You might also use the Escape gesture to navigate back one level in a custom navigation hierarchy. You do not need to implement this gesture if you are already using a UINavigationController object, which already handles this gesture.
 
 使用`accessibilityPerformEscape`方法处理`Escape`手势。对于覆盖内容的视图（例如模态对话框或警报），使用该方法关闭覆盖。`Escape`手势的功能类似于计算机键盘上的Esc键的功能；它取消临时对话框或工作表以显示主要内容。您还可以使用`Escape`手势在自定义导航层次结构中向后导航一层。如果您已经在使用已经处理此手势的`UINavigationController`对象，则不需要实现此手势。
 
-### 两指双击 📎 Magic Tap
+### 两指双击 🍟 Magic Tap
 
 Use the accessibilityPerformMagicTap method to handle the Magic Tap gesture. The Magic Tap gesture performs an often-used or most-intended action quickly. For example, in the Phone app, a Magic Tap picks up or hangs up a phone call, and in the Clock app, a Magic Tap starts and stops the stopwatch. You might use this gesture to trigger actions that are not necessarily relevant to the element that the VoiceOver cursor is highlighting. To handle Magic Tap gestures from anywhere in your app, implement the accessibilityPerformMagicTap method in your app delegate.
 
 使用`accessibilityPerformMagicTap`方法处理`Magic Tap`手势。`Magic Tap`手势可快速执行常用或最有意义的操作。例如，在电话应用中，`Magic Tap`接听或挂断电话，在时钟应用中，`Magic Tap`启动和停止秒表。您可以使用此手势触发不一定与`Voiceover`光标突出显示的元素相关的操作。要从应用中的任何位置处理`Magic Tap`手势，请在应用委托中实现`accessibilityPerformMagicTap`方法。
 
-### 三指滚动 📎 Three-Finger Scroll
+### 三指滚动 🍟 Three-Finger Scroll
 
 Use the accessibilityScroll: method to scroll the content of a custom view when a VoiceOver user performs a three-finger scroll gesture. A custom view that displays the pages of a book might use this gesture to turn the page. The parameter passed to the method indicates the direction in which to scroll.
 
 当`Voiceover`用户执行三指滚动手势时，使用`accessibilityScroll:`方法滚动自定义视图的内容。显示书籍页面的自定义视图可能使用此手势翻页。传递给该方法的参数指示滚动方向。
 
-### 增大和减小 📎 Increment and Decrement
+### 增大和减小 🍟 Increment and Decrement
 
 Use the accessibilityIncrement and accessibilityDecrement methods to increment or decrement a value in the element. Elements with the UIAccessibilityTraitAdjustable trait must implement this method.
 
 使用`accessibilityIncrement`和`accessibilityDecrement`方法来增加或减少元素中的值。具有`UIAccessibilityTraitAdjustable`的元素必须实现此方法。
 
-### 监听无障碍通知 📎 Observing Accessibility Notifications
+### 监听无障碍通知 🍟 Observing Accessibility Notifications
 
 UIKit sends accessibility notifications to inform your app about relevant events. The objects of your app can observe any relevant notifications and use them to perform appropriate tasks. For example, the iBooks app uses the UIAccessibilityAnnouncementDidFinishNotification notification to turn the page and continue reading when VoiceOver finishes speaking the last line on a page. This behavior provides a seamless, uninterrupted reading experience.
 
@@ -785,9 +785,7 @@ For a list of accessibility notifications you can observe, see UIAccessibility P
 
 有关您可以观察到的无障碍功能通知列表，请参阅`UIAccess`协议参考[|原文](https://developer.apple.com/documentation/objectivec/nsobject/uiaccessibility)。
 
->>
-
-## 4. 保存和恢复状态 📎 Preserving and Restoring State
+## 4. 保存和恢复状态 🍟 Preserving and Restoring State
 
 View controllers play an important role in the state preservation and restoration process. State preservation records the configuration of your app before it is suspended so that the configuration can be restored on a subsequent app launch. Returning an app to its previous configuration saves time for the user and offers a better user experience.
 
@@ -813,7 +811,7 @@ For an overview of the preservation and restoration process, see App Programming
 
 有关保存和恢复过程的概述，请参阅iOS的应用程序编程指南[|原文](https://developer.apple.com/documentation/uikit#//apple_ref/doc/uid/TP40007072)。
 
-### 标记保存视图控制器 📎 Tagging View Controllers for Preservation
+### 标记保存视图控制器 🍟 Tagging View Controllers for Preservation
 
 UIKit preserves only the view controllers you tell it to preserve. Each view controller has a restorationIdentifier property, whose value is nil by default. Setting that property to a valid string tells UIKit that the view controller and its views should be preserved. You can assign restoration identifiers programmatically or in your storyboard file.
 
@@ -823,7 +821,7 @@ When assigning restoration identifiers, remember that all parent view controller
 
 分配`restorationIdentifier`时，请记住视图控制器层次结构中的所有父视图控制器也必须具有`restorationIdentifier`。在保存过程中，UIKit从窗口的根视图控制器开始并遍历视图控制器层次结构。如果该层次结构中的视图控制器没有`restorationIdentifier`，则视图控制器及其所有子视图控制器和被呈现的视图控制器将被忽略。
 
-### 选择有效的`restorationIdentifier` 📎 Choosing Effective Restoration Identifiers
+### 选择有效的`restorationIdentifier` 🍟 Choosing Effective Restoration Identifiers
 
 UIKit uses your restoration identifier strings to recreate view controllers later, so choose strings that are easily identifiable to your code. If UIKit cannot automatically create one of your view controllers, it asks you to create it, providing you with the restoration identifiers of the view controller and all of its parent view controllers. This chain of identifiers represents the restoration path for the view controller and is how you determine which view controller is being requested. The restoration path starts at the root view controller and includes every view controller up to and including the one that was requested.
 
@@ -835,34 +833,40 @@ Restoration identifiers are often just the class name of the view controller. If
 
 The restoration path for every view controller must be unique. If a container view controller has two children, the container must assign each child a unique restoration identifier. Some container view controllers in UIKit automatically disambiguate their child view controllers, allowing you to use the same restoration identifiers for each child. For example, the UINavigationController class adds information to each child based on its position in the navigation stack. For more information about the behavior of a given view controller, see the corresponding class reference.
 
-每个视图控制器的恢复路径必须是唯一的。如果容器视图控制器有两个子VC，则容器必须为每个子视图控制器分配唯一的恢复标识符。UIKit中的一些容器视图控制器会自动消除其子视图控制器的歧义，允许您为每个子视图控制器使用相同的恢复标识符。例如，UINavigationController类根据每个子视图在导航堆栈中的位置向其添加信息。有关给定视图控制器行为的更多信息，请参阅相应的类引用。
+每个视图控制器的恢复路径必须是唯一的。如果容器视图控制器有两个子VC，则容器必须为每个子视图控制器分配唯一的恢复标识符。UIKit中的一些容器视图控制器会自动消除其子视图控制器的歧义，允许您为每个子视图控制器使用相同的恢复标识符。例如，`UINavigationController`类根据每个子视图在导航堆栈中的位置向其添加信息。有关给定视图控制器行为的更多信息，请参阅相应的类引用。
 
 For more information on how you use restoration identifiers and restoration paths to create view controllers, see Restoring View Controllers at Launch Time.
 
-有关如何使用还原标识符和还原路径创建视图控制器的详细信息，请参阅在启动时还原视图控制器。
+有关如何使用`restoration identifiers`和`restoration paths`创建视图控制器的详细信息，请参阅在*启动时还原视图控制器*[|原文](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/PreservingandRestoringState.html#//apple_ref/doc/uid/TP40007457-CH28-SW5)。
 
-Excluding Groups of View Controllers
-排除视图控制器组
+### 排除视图控制器组 🍟 Excluding Groups of View Controllers
+
 To exclude an entire group of view controllers from the restoration process, set the restoration identifier of the parent view controller to nil. Figure 7-1 shows the impact that setting the restoration identifier to nil has on the view controller hierarchy. The lack of preservation data prevents that view controller from being restored later.
 
-要从恢复过程中排除整个视图控制器组，请将父视图控制器的恢复标识符设置为nil。图7-1显示了将恢复标识符设置为nil对视图控制器层次结构的影响。缺少保存数据会阻止以后恢复该视图控制器。
+要从恢复过程中排除整组视图控制器，请将父视图控制器的恢复标识符设置为`nil`。图7-1显示了将恢复标识符设置为`nil`对视图控制器层次结构的影响。缺少保存下的依据会阻止以后恢复该视图控制器。
 
 Figure 7-1Excluding view controllers from the automatic preservation process
-Figure 7-1Excluding view controllers from the automatic preservation process
-image: ../Art/state_vc_caveats.jpg
+
+图7-1 从自动保存过程中排除视图控制器
+
+![](./images/state_vc_caveats_2x.png)
+
 Excluding one or more view controllers does not remove them altogether during a subsequent restore. At launch time, any view controllers that are part of your app’s default setup are still created, as shown in Figure 7-2. Such view controllers are recreated in their default configuration, but they are still created.
 
 排除一个或多个视图控制器不会在后续还原期间完全删除它们。在启动时，仍会创建属于应用默认设置的任何视图控制器，如图7-2所示。此类视图控制器会在其默认配置中重新创建，但仍会创建。
 
 Figure 7-2Loading the default set of view controllers
-图7-2加载默认的视图控制器集
-image: ../Art/state_vc_caveats_2.jpg
-Excluding a view controller from the automatic preservation process does not prevent you from preserving it manually. Saving a reference to the view controller in the restoration archive preserves the view controller and its state information. For example, if the app delegate in Figure 7-1 saved the three children of the navigation controller, their state would be preserved. During a restore, the app delegate could then recreate those view controllers and push them onto the navigation controller’s stack.
+
+图7-2 加载默认的视图控制器集
+
+![](./images/state_vc_caveats_2_2x.png)
 
 Excluding a view controller from the automatic preservation process does not prevent you from preserving it manually. Saving a reference to the view controller in the restoration archive preserves the view controller and its state information. For example, if the app delegate in Figure 7-1 saved the three children of the navigation controller, their state would be preserved. During a restore, the app delegate could then recreate those view controllers and push them onto the navigation controller’s stack.
 
-Preserving a View Controller’s Views
-Preserving a View Controller’s Views
+从自动保存过程中排除视图控制器不会阻止您手动保存它。在恢复存档中保存对视图控制器的引用会保留视图控制器及其状态信息。例如，如果图7-1中的应用程序委托保存了导航控制器的三个子级，它们的状态将被保留。在恢复期间，应用程序委托可以重新创建这些视图控制器并将它们推送到导航控制器的堆栈上。
+
+### 保留视图控制器的视图 🍟 Preserving a View Controller’s Views
+
 Some views have additional state information that is relevant to the view but not to the parent view controller. For example, a scroll view has a scroll position that you might want to preserve. While the view controller is responsible for providing the content of the scroll view, the scroll view itself is responsible for preserving its visual state.
 
 一些视图具有与视图相关但与父视图控制器无关的附加状态信息。例如，滚动视图具有您可能想要保留的滚动位置。虽然视图控制器负责提供滚动视图的内容，但滚动视图本身负责保留其视觉状态。
@@ -871,169 +875,147 @@ To save a view’s state, do the following:
 
 要保存视图的状态，请执行以下操作：
 
-Assign a valid string to the view’s restorationIdentifier property.
+* Assign a valid string to the view’s restorationIdentifier property.
 
-将有效字符串分配给视图的restorationIdentifier属性。
+* 将有效字符串分配给视图的restorationIdentifier属性。
 
-Use the view from a view controller that also has a valid restoration identifier.
+* Use the view from a view controller that also has a valid restoration identifier.
 
-使用具有有效恢复标识符的视图控制器中的视图。
+* 使用具有有效`restoration identifier`的视图控制器中的视图。
 
-For table views and collection views, assign a data source that adopts the UIDataSourceModelAssociation protocol.
+* For table views and collection views, assign a data source that adopts the UIDataSourceModelAssociation protocol.
 
-对于表视图和集合视图，分配采用UIDataSourceModelAssociation协议的数据源。
+* 对于表视图和集合视图，分配采用`UIDataSourceModelAssociation`协议的数据源。
 
 Assigning a restoration identifier to a view tells UIKit that it should write that view’s state to the preservation archive. When the view controller is restored later, UIKit also restores the state of any views that had restoration identifiers.
 
 将恢复标识符分配给视图告诉UIKit它应该将该视图的状态写入保存存档。当视图控制器稍后恢复时，UIKit还会恢复任何具有恢复标识符的视图的状态。
 
-Restoring View Controllers at Launch Time
-在启动时恢复视图控制器
+### 在启动时恢复视图控制器 🍟 Restoring View Controllers at Launch Time
+
 At launch time, UIKit tries to restore your app to its previous state. At that time, UIKit asks your app to create (or locate) the view controller objects that comprise your preserved user interface. UIKit searches in the following order when trying to locate view controllers:
 
 在启动时，UIKit会尝试将您的应用恢复到以前的状态。此时，UIKit会要求您的应用创建（或定位）构成您保留的用户交互界面的视图控制器对象。UIKit在尝试定位视图控制器时按以下顺序进行搜索：
 
-If the view controller had a restoration class, UIKit asks that class to provide the view controller. UIKit calls the viewControllerWithRestorationIdentifierPath:coder: method of the associated restoration class to retrieve the view controller. If that method returns nil, it is assumed that the app does not want to recreate the view controller and UIKit stops looking for it.
+* If the view controller had a restoration class, UIKit asks that class to provide the view controller. UIKit calls the         viewControllerWithRestorationIdentifierPath:coder: method of the associated restoration class to retrieve the view controller. If that method returns nil, it is assumed that the app does not want to recreate the view controller and UIKit stops looking for it.
 
-如果视图控制器有恢复类，UIKit会要求该类提供视图控制器。UIKit调用viewControllerWithRestorationIdentifierPath:coder:方法来检索视图控制器。如果该方法返回nil，则假定应用程序不想重新创建视图控制器，UIKit停止寻找它。
+* **如果视图控制器有`restoration class`，UIKit会要求该类提供视图控制器。** UIKit调用`viewControllerWithRestorationIdentifierPath:coder:`方法来检索视图控制器。如果该方法返回`nil`，则假定应用程序不想重新创建视图控制器，UIKit停止寻找它。
 
-If the view controller did not have a restoration class, UIKit asks the app delegate to provide the view controller. UIKit calls the application:viewControllerWithRestorationIdentifierPath:coder: method of your app delegate to look for view controllers without a restoration class. If that method returns nil, UIKit tries to find the view controller implicitly.
+* If the view controller did not have a restoration class, UIKit asks the app delegate to provide the view controller. UIKit calls the application:viewControllerWithRestorationIdentifierPath:coder: method of your app delegate to look for view controllers without a restoration class. If that method returns nil, UIKit tries to find the view controller implicitly.
 
-如果视图控制器没有恢复类，UIKit会要求应用委托提供视图控制器。UIKit会调用应用委托的application:viewControllerWithRestorationIdentifierPath:coder:方法来查找没有恢复类的视图控制器。如果该方法返回nil，UIKit会尝试隐式查找视图控制器。
+* **如果视图控制器没有`restoration class`，UIKit会要求应用委托提供视图控制器。** UIKit会调用应用委托的`application:viewControllerWithRestorationIdentifierPath:coder:`方法来查找没有`restoration class`的视图控制器。如果该方法返回`nil`，UIKit会尝试隐式查找视图控制器。
 
-If a view controller with the correct restoration path already exists, UIKit uses that object. If your app creates view controllers at launch time (either programmatically or by loading them from a storyboard) and those view controllers have restoration identifiers, UIKit finds them implicitly based on their restoration paths.
+* If a view controller with the correct restoration path already exists, UIKit uses that object. If your app creates view controllers at launch time (either programmatically or by loading them from a storyboard) and those view controllers have restoration identifiers, UIKit finds them implicitly based on their restoration paths.
 
-如果具有正确恢复路径的视图控制器已经存在，UIKit将使用该对象。如果您的应用在启动时创建视图控制器（以编程方式或通过从故事板加载它们）并且这些视图控制器具有恢复标识符，UIKit会根据它们的恢复路径隐式查找它们。
+* **如果具有正确`restoration path`的视图控制器已经存在，UIKit将使用该对象。** 如果您的应用在启动时创建视图控制器（以编程方式或通过从故事板加载它们）并且这些视图控制器具有恢复标识符，UIKit会根据它们的`restoration path`隐式查找它们。
 
-If the view controller was originally loaded from a storyboard file, UIKit uses the saved storyboard information to locate and create it. UIKit saves information about a view controller’s storyboard inside the restoration archive. At restore time, UIKit uses that information to locate the same storyboard file and instantiate the corresponding view controller if the view controller was not found by any other means.
+* If the view controller was originally loaded from a storyboard file, UIKit uses the saved storyboard information to locate and create it. UIKit saves information about a view controller’s storyboard inside the restoration archive. At restore time, UIKit uses that information to locate the same storyboard file and instantiate the corresponding view controller if the view controller was not found by any other means.
 
-If the view controller was originally loaded from a storyboard file, UIKit uses the saved storyboard information to locate and create it. UIKit saves information about a view controller’s storyboard inside the restoration archive. At restore time, UIKit uses that information to locate the same storyboard file and instantiate the corresponding view controller if the view controller was not found by any other means.
+* **如果视图控制器最初是从故事板文件加载的，UIKit使用保存的故事板信息来定位和创建它。** UIKit将视图控制器的故事板信息保存在恢复存档中。在恢复时，UIKit使用该信息来定位相同的故事板文件，并在通过任何其他方式未找到视图控制器时实例化相应的视图控制器。
 
 Assigning a restoration class to a view controller prevents UIKit from searching for that view controller implicitly. Using a restoration class gives you more control over whether you really want to create a view controller. For example, your viewControllerWithRestorationIdentifierPath:coder: method can return nil if your class determines that the view controller should not be recreated. When no restoration class is present, UIKit does everything it can to find or create the view controller and restore it.
 
-将恢复类分配给视图控制器可以防止UIKit隐式搜索该视图控制器。使用恢复类可以让您更好地控制是否真的要创建视图控制器。例如，如果您的类确定不应重新创建视图控制器，您的viewControllerWithRestorationIdentifierPath:coder:方法可以返回nil。当不存在恢复类时，UIKit会尽其所能查找或创建视图控制器并将其恢复。
+将`restoration class`分配给视图控制器可以防止UIKit隐式搜索该视图控制器。使用`restoration class`可以让您更好地控制是否真的要创建视图控制器。例如，如果您的类确定不应重新创建视图控制器，您的`viewControllerWithRestorationIdentifierPath:coder:`方法可以返回`nil`。当不存在`restoration class`时，UIKit会尽其所能查找或创建视图控制器并将其恢复。
 
 When using a restoration class, your viewControllerWithRestorationIdentifierPath:coder: method should create a new instance of the class, perform minimal initialization, and return the resulting object. Listing 7-1 shows an example of how you might use this method to load a view controller from a storyboard. Because the view controller was originally loaded from a storyboard, this method uses the UIStateRestorationViewControllerStoryboardKey key to get the storyboard from the archive. Note that this method does not try to configure the view controller’s data fields. That step occurs later when the view controller’s state is decoded.
 
-使用恢复类时，您的viewControllerWithRestorationIdentifierPath:coder:方法应该创建该类的新实例，执行最小初始化，并返回结果对象。清单7-1显示了一个示例，说明如何使用此方法从故事板加载视图控制器。因为视图控制器最初是从故事板加载的，因此此方法使用UIStateRestorationViewControllerStoryboardKey键从存档中获取故事板。请注意，此方法不会尝试配置视图控制器的数据字段。该步骤稍后在解码视图控制器的状态时发生。
+使用`restoration class`时，您的`viewControllerWithRestorationIdentifierPath:coder:`方法应该创建该类的新实例，执行最小初始化，并返回结果对象。清单7-1显示了一个示例，说明如何使用此方法从故事板加载视图控制器。因为视图控制器最初是从故事板加载的，因此此方法使用`UIStateRestorationViewControllerStoryboardKey`键从存档中获取故事板。请注意，此方法不会尝试配置视图控制器的数据字段。该步骤稍后在解码视图控制器的状态时发生。
 
 Listing 7-1Creating a new view controller during restoration
+
 示例7-1在恢复期间创建一个新的视图控制器
-+ (UIViewController*) viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-+ (UIViewController*) viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
-                      coder:(NSCoder *)coder {
-                      coder:(NSCoder *)coder {
-   MyViewController* vc;
-   MyViewController* vc;
-   UIStoryboard* sb = [coder decodeObjectForKey:UIStateRestorationViewControllerStoryboardKey];
-   UIStoryboard* sb = [coder decodeObjectForKey:UIStateRestorationViewControllerStoryboardKey];
+```objc
++ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents
+                      coder:(NSCoder *)coder
+{
+   MyViewController *vc;
+   UIStoryboard *sb = [coder decodeObjectForKey:UIStateRestorationViewControllerStoryboardKey];
    if (sb) {
-   if (sb) {
-      vc = (PushViewController*)[sb instantiateViewControllerWithIdentifier:@"MyViewController"];
-      vc = (PushViewController*)[sb instantiateViewControllerWithIdentifier:@"MyViewController"];
-      vc.restorationIdentifier = [identifierComponents lastObject];
+      vc = (PushViewController *)[sb instantiateViewControllerWithIdentifier:@"MyViewController"];
       vc.restorationIdentifier = [identifierComponents lastObject];
       vc.restorationClass = [MyViewController class];
-      vc.restorationClass = [MyViewController class];
-   }
    }
     return vc;
-    return vc;
 }
-}
+```
+
 Reassigning the restoration identifier and restoration class is a good habit to adopt when recreating view controllers manually. The simplest way to restore the restoration identifier is to grab the last item in the identifierComponents array and assign it to your view controller.
 
-重新分配恢复标识符和恢复类是手动重新创建视图控制器时采用的一个好习惯。恢复恢复标识符的最简单方法是抓取identifierComponents数组中的最后一项并将其分配给您的视图控制器。
+重新分配`restoration identifier`和`restoration class`是手动重新创建视图控制器时采用的一个好习惯。恢复`restoration identifier`的最简单方法是抓取`identifierComponents`数组中的最后一项并将其分配给您的视图控制器。
 
 For objects that were created from your app’s main storyboard file at launch time, do not create new instances of each object. Let UIKit find those objects implicitly or use the application:viewControllerWithRestorationIdentifierPath:coder: method of your app delegate to find the existing objects.
 
-对于在启动时从应用的主故事板文件创建的对象，不要为每个对象创建新实例。让UIKit隐式查找这些对象或使用应用委托的application:viewControllerWithRestorationIdentifierPath:coder:方法来查找现有对象。
+对于在启动时从应用的主故事板文件创建的对象，不要为每个对象创建新实例。让UIKit隐式查找这些对象或使用应用委托的`application:viewControllerWithRestorationIdentifierPath:coder:`方法来查找现有对象。
 
-Encoding and Decoding Your View Controller’s State
-对视图控制器的状态进行编码和解码
+### 对视图控制器的状态进行编码和解码 🍟 Encoding and Decoding Your View Controller’s State
+
 For each object slated for preservation, UIKit calls the object’s encodeRestorableStateWithCoder: method to give it a chance to save its state. During the restoration process, UIKit calls the matching decodeRestorableStateWithCoder: method to decode that state and apply it to the object. The implementation of these methods is optional, but recommended, for your view controllers. You might use them to save and restore the following types of information:
 
-对于每个预定保存的对象，UIKit调用对象的encodeRestorableStateWithCoder:方法，让它有机会保存其状态。在恢复过程中，UIKit调用匹配的decodeRestorableStateWithCoder:方法来解码该状态并将其应用于对象。这些方法的实现是可选的，但建议用于您的视图控制器。您可以使用它们来保存和恢复以下类型的信息：
+对于每个预定保存的对象，UIKit调用对象的`encodeRestorableStateWithCoder:`方法，让它有机会保存其状态。在恢复过程中，UIKit调用匹配的`decodeRestorableStateWithCoder:`方法来解码该状态并将其应用于对象。这些方法的实现是可选的，但建议用于您的视图控制器。您可以使用它们来保存和恢复以下类型的信息：
 
-References to any data being displayed (not the data itself)
+* References to any data being displayed (not the data itself)
 
-对正在显示的任何数据的引用（不是数据本身）
+* 对正在显示的数据的引用（不是数据本身）
 
-For a container view controller, references to its child view controllers
+* For a container view controller, references to its child view controllers
 
-对于容器视图控制器，对其子视图控制器的引用
+* 对于容器视图控制器，对其子视图控制器的引用
 
-Information about the current selection
+* Information about the current selection
 
-有关当前选择的信息
+* 有关当前选择的信息
 
-For view controllers with a user-configurable view, information about the current configuration of that view.
+* For view controllers with a user-configurable view, information about the current configuration of that view.
 
-对于具有用户可配置视图的视图控制器，有关该视图当前配置的信息。
-
-In your encode and decode methods, you can encode objects and any data types supported by the coder. For all objects except views and view controllers, the object must adopt the NSCoding protocol and use the methods of that protocol to write its state. For views and view controllers, the coder does not use the NSCoding protocol to save the object’s state. Instead, the coder saves the restoration identifier of the object and adds it to the list of preservable objects, which causes that object’s encodeRestorableStateWithCoder: method to be called.
+* 对于具有用户可配置视图的视图控制器，有关该视图当前配置的信息。
 
 In your encode and decode methods, you can encode objects and any data types supported by the coder. For all objects except views and view controllers, the object must adopt the NSCoding protocol and use the methods of that protocol to write its state. For views and view controllers, the coder does not use the NSCoding protocol to save the object’s state. Instead, the coder saves the restoration identifier of the object and adds it to the list of preservable objects, which causes that object’s encodeRestorableStateWithCoder: method to be called.
+
+在您的编码和解码方法中，您可以对对象和编码器支持的任何数据类型进行编码。对于除视图和视图控制器之外的所有对象，对象必须采用`NSCoding`协议，并使用该协议的方法来写入其状态。对于视图和视图控制器，编码器不使用`NSCoding`协议来保存对象的状态。相反，编码器保存对象的`restoration identifier`并将其添加到可保存对象列表中，这会导致调用该对象的`encodeRestorableStateWithCoder:`方法。
+
 
 The encodeRestorableStateWithCoder: and decodeRestorableStateWithCoder: methods of your view controllers must call super at some point in their implementation. Calling super gives the parent class a chance to save and restore any additional information. Listing 7-2 shows a sample implementation of these methods that save a numerical value used to identify the specified view controller.
 
-视图控制器的encodeRestorableStateWithCoder:和decodeRestorableStateWithCoder:方法必须在其实现中的某个点调用super。调用super使父类有机会保存和恢复任何其他信息。清单7-2显示了这些方法的示例实现，这些方法保存了用于标识指定视图控制器的数值。
+视图控制器的`encodeRestorableStateWithCoder:`和`decodeRestorableStateWithCoder:`方法必须在其实现中的某个点调用super。调用super使父类有机会保存和恢复任何其他信息。清单7-2显示了这些方法的示例实现，这些方法保存了用于标识指定视图控制器的数值。
 
 Listing 7-2Encoding and decoding a view controller’s state.
-清单7-2对视图控制器的状态进行编码和解码。
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
+
+清单7-2 对视图控制器的状态进行编码和解码。
+```objc
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
    [super encodeRestorableStateWithCoder:coder];
-   [super encodeRestorableStateWithCoder:coder];
- 
- 
-   [coder encodeInt:self.number forKey:MyViewControllerNumber];
    [coder encodeInt:self.number forKey:MyViewControllerNumber];
 }
-}
- 
  
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
-   [super decodeRestorableStateWithCoder:coder];
    [super decodeRestorableStateWithCoder:coder];
  
- 
-   self.number = [coder decodeIntForKey:MyViewControllerNumber];
    self.number = [coder decodeIntForKey:MyViewControllerNumber];
 }
-}
+```
+
 Coder objects are not shared during the encode and decode process. Each object with preservable state receives its own coder object. The use of unique coders means that you do not have to worry about namespace collisions among your keys. However, do not use the UIApplicationStateRestorationBundleVersionKey, UIApplicationStateRestorationUserInterfaceIdiomKey, and UIStateRestorationViewControllerStoryboardKey key names yourself. Those keys are used by UIKit to store additional information about the state of your view controller.
 
-编码器对象在编码和解码过程中不共享。每个具有可保存状态的对象都接收自己的编码器对象。使用唯一的编码器意味着您不必担心键之间的命名空间冲突。但是，不要使用UIApplicationStateRestorationBundleVersionKey、UIApplicationStateRestorationUserInterfaceIdiomKey和UIStateRestorationViewControllerStoryboardKey键自己命名。UIKit使用这些键来存储有关视图控制器状态的其他信息。
+编码器对象在编码和解码过程中不共享。每个具有可保存状态的对象都接收自己的编码器对象。使用唯一的编码器意味着您不必担心键之间的命名空间冲突。但是，不要使用`UIApplicationStateRestorationBundleVersionKey`、`UIApplicationStateRestorationUserInterfaceIdiomKey`和`UIStateRestorationViewControllerStoryboardKey`键。UIKit使用这些键来存储有关视图控制器状态的其他信息。
 
 For more information about implementing the encode and decode methods for your view controllers, see UIViewController Class Reference.
 
-有关为视图控制器实现编码和解码方法的详细信息，请参阅UIViewController类参考。
+有关为视图控制器实现编码和解码方法的详细信息，请参阅UIViewController类参考[|原文](https://developer.apple.com/documentation/uikit/uiviewcontroller)。
 
-Tips for Saving and Restoring Your View Controllers
-保存和恢复视图控制器的提示
+### 保存和恢复视图控制器的提示 🍟 Tips for Saving and Restoring Your View Controllers
+
 As you add support for state preservation and restoration in your view controllers, consider the following guidelines:
 
 在视图控制器中添加对状态保存和恢复的支持时，请考虑以下准则：
 
-Remember that you might not want to preserve all view controllers. In some cases, it might not make sense to preserve a view controller. For example, if the app was displaying a change, you might want to cancel the operation and restore the app to the previous screen. In such a case, you would not preserve the view controller that asks for the new password information.
+* Remember that you might not want to preserve all view controllers. In some cases, it might not make sense to preserve a view controller. For example, if the app was displaying a change, you might want to cancel the operation and restore the app to the previous screen. In such a case, you would not preserve the view controller that asks for the new password information.
 
-请记住，您可能不想保留所有视图控制器。在某些情况下，保留视图控制器可能没有意义。例如，如果应用程序显示更改，您可能希望取消操作并将应用程序恢复到上一个屏幕。在这种情况下，您不会保留请求新密码信息的视图控制器。
+* **请记住，您可能不想保留所有视图控制器。** 在某些情况下，保留视图控制器可能没有意义。例如，如果应用程序显示更改，您可能希望取消操作并将应用程序恢复到上一个屏幕。在这种情况下，您不会保留请求新密码信息的视图控制器。
 
-Avoid swapping view controller classes during the restoration process. The state preservation system encodes the class of the view controllers it preserves. During restoration, if your app returns an object whose class does not match (or is not a subclass of) the original object, the system does not ask the view controller to decode any state information. Thus, swapping out the old view controller for a completely different one does not restore the full state of the object.
+* Avoid swapping view controller classes during the restoration process. The state preservation system encodes the class of the view controllers it preserves. During restoration, if your app returns an object whose class does not match (or is not a subclass of) the original object, the system does not ask the view controller to decode any state information. Thus, swapping out the old view controller for a completely different one does not restore the full state of the object.
 
-避免在恢复过程中交换视图控制器类。状态保存系统对其保留的视图控制器类进行编码。在恢复过程中，如果您的应用程序返回的对象的类与原始对象不匹配（或不是原始对象的子类），系统不会要求视图控制器解码任何状态信息。因此，将旧视图控制器换成完全不同的视图控制器不会恢复对象的完整状态。
+* **避免在恢复过程中交换视图控制器类。** 状态保存系统对其保留的视图控制器类进行编码。在恢复过程中，如果您的应用程序返回的对象的类与原始对象不匹配（或不是原始对象的子类），系统不会要求视图控制器解码任何状态信息。因此，将旧视图控制器换成完全不同的视图控制器不会恢复对象的完整状态。
 
-The state preservation system expects you to use view controllers as they were intended. The restoration process relies on the containment relationships of your view controllers to rebuild your interface. If you do not use container view controllers properly, the preservation system cannot find your view controllers. For example, never embed a view controller’s view inside a different view unless there is a containment relationship between the corresponding view controllers.
+* The state preservation system expects you to use view controllers as they were intended. The restoration process relies on the containment relationships of your view controllers to rebuild your interface. If you do not use container view controllers properly, the preservation system cannot find your view controllers. For example, never embed a view controller’s view inside a different view unless there is a containment relationship between the corresponding view controllers.
 
-状态保存系统希望您按预期使用视图控制器。恢复过程依赖于视图控制器的包含关系来重建您的界面。如果您没有正确使用容器视图控制器，保存系统将无法找到您的视图控制器。例如，除非相应的视图控制器之间存在包含关系，否则永远不要将视图控制器的视图嵌入到不同的视图中。
-
-Supporting Accessibility支持可访问性
-
-Presenting a View Controller呈现视图控制器
-
-
-
-
-<<
+* **状态保存系统希望您按预期使用视图控制器。** 恢复过程依赖于视图控制器的包含关系来重建您的界面。如果您没有正确使用容器视图控制器，保存系统将无法找到您的视图控制器。例如，除非相应的视图控制器之间存在包含关系，否则永远不要将视图控制器的视图嵌入到不同的视图中。
