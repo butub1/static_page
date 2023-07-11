@@ -55,23 +55,25 @@ sidebarDepth: 2
 
 ## 倒置依赖
 
-一种解决的方案，就是把依赖倒置。上层模块Policy去依赖<PolicyServiceInterface>，他知道自己需要一个什么样的对象。
+一种解决的方案，就是把依赖倒置。上层模块Policy去依赖`<PolicyServiceInterface>`，他知道自己需要一个什么样的对象。
 
 ![DIP3](./DIP/DIP3.jpg)
-
+```
 依赖关系：Policy #import  <PolicyServiceInterface> #implemenet Machanism   #import <MachanismServiceInterface> #implement Utility
-
+```
+```
 调用关系： Policy --> <PolicyServiceInterface>  --> Machanism --> <MachanismServiceInterface> -->Utility
-
+```
 这样底层的实现即便改动，只要没有改动到接口层，上层模块就可以继续使用原本的接口抽象。
 
 “倒置”：
-
+```
 原本： Policy #import Machanism
 
 现在： Policy #import <PolicyServiceInterface>
 
  Machanism #import <PolicyServiceInterface>
+```
 Policy 不需要再引入 Machanism的内容，反而是Machanism要去引入Policy定义的接口，因此说倒置。不过实际的函数调用关系没有改变，上下层关系也没有改变，这么处理完的效果是代码层面的隔离，行为仍然和原来是一致的。
 
 ## 一个简单的例子
@@ -105,9 +107,9 @@ public class Button
 
 接口的代码，如果放在上层模块，下层模块要去#import上层模块吗？
 
-比如 Machanism要去#import <PolicyServiceInterface>，倒置是倒置了，就是有点奇怪。
+比如 Machanism要去`#import <PolicyServiceInterface>`，倒置是倒置了，就是有点奇怪。
 
-如果Machanism有多个接入方，那么<PolicyServiceInterface>就应该被多个接入方#import, 那么命名也就变得不那么合适了。
+如果Machanism有多个接入方，那么`<PolicyServiceInterface>`就应该被多个接入方#import, 那么命名也就变得不那么合适了。
 
 * 接口单独放，C++中单独放在一个namespace中，Java中单独放在一个package中。
 
@@ -362,3 +364,5 @@ func NewFooController(logger Logger) *FooController {
 3. https://github.com/bxcodec/go-clean-arch
 
 4. [GitHub - sergdort/CleanArchitectureRxSwift: Example of Clean Architecture of iOS app using RxSwift](https://github.com/sergdort/CleanArchitectureRxSwift)
+
+<Vssue :title="$title" />

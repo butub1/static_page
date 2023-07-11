@@ -13,7 +13,9 @@
 
 ---
 
-# 哲学
+# Philosophy
 
 在这里记录一些，哲学相关的内容， 笔记之类的。
+
+<Vssue :title="$title" />
 

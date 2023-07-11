@@ -1,11 +1,11 @@
 # iOS-Demo 项目及注入方式
 
-在接触`iOS`一年多之后，明显感觉到， `objc`带有一种青黄不接的感觉。一方面市面上的大多数app基于`Swift` 构建，另一方面在国内，大型的app还在继续使用 objc 构建， 团队中的 iOS 新人对于 iOS 开发的兴趣稍显欠缺，因此萌生了些一个 demo app ， 用来方便地构建 demo，来做各种各样的演示。
+在接触`iOS`一年多之后，明显感觉到， `Objc`带有一种青黄不接的感觉。一方面市面上的大多数app基于`Swift` 构建，另一方面在国内，大型的 App 还在继续使用 `Objc` 构建， 团队中的 iOS 新人对于 iOS 开发的兴趣稍显欠缺，因此萌生了些一个 Demo App ， 用来方便地构建 Demo，来做各种各样的演示。
 
- * project repo : [https://github.com/butub1/iOS-Demo](https://github.com/butub1/iOS-Demo)
+ * Project Repository : [https://github.com/butub1/iOS-Demo](https://github.com/butub1/iOS-Demo)
 
 ## 1. 需求
-需求很简单：`方便地构建ViewController`
+需求很简单：`方便地构建 ViewController`
 
 1. 要方便书写，避免重复劳动，避免如下情况:
     ```objc
@@ -20,9 +20,7 @@
     #import "DMSampleViewController.h"
     ```
 2. 要有说明文字，要有 icon、author、hyperlink
-
 3. 要易于检索，搞个简单的搜索的VC， 方便跳转
-
 4. 要解耦，或者容易修改，上述的信息，在注入后，要能容易拿取到。
 
 ## 2. 设计
@@ -108,3 +106,5 @@ dm_registerDemo(DMSampleViewController, {
 
 ![demo.gif](./images/demo.gif)
 
+---
+<Vssue :title="$title" />
