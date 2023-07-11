@@ -1,5 +1,5 @@
 module.exports = {
-	title: 'HIPPO🦛',
+	title: 'HIPPO 🦛',
 	description: '记录一些东西',
 	base: "/static_page/",
 	head: [

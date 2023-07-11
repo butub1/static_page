@@ -1,7 +1,7 @@
 ---
 home: true
 #heroImage: /logo.png
-heroText: 一个河马🦛
+heroText: A Hippo 🦛
 tagline: 记录点东西
 actionText: 关于我 →
 actionLink: /ABOUT.md

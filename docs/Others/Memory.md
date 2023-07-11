@@ -43,21 +43,19 @@
 
 ## 0x0006 | 对不确定的事情保持乐观
 
-from dingkun
+-- dingkun
 
 ## 0x0005 | 你所坚持的，才成为你自己
 
 我所坚持的，才成为我自己。
 
-from myself
-
 ## 0x0004 | 成长是一个很私人的事情
 
-from dingkun
+-- dingkun
 
 ## 0x0003 | 大处着眼， 小处着手
 
-from dingkun
+-- dingkun
 
 ## 0x0002 | 整体看起来，是不是还不错
 > link: [https://www.bilibili.com/video/BV1Zr4y1J7PH/](https://www.bilibili.com/video/BV1Zr4y1J7PH/)
