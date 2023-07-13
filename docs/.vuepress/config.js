@@ -60,6 +60,7 @@ module.exports = {
 				'ABOUT',
 				'Sponsor'
 			],
+			
 			// '/page-a',
 			// ['/page-b', 'Explicit link text']
 		},
