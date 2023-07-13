@@ -1,5 +1,5 @@
 module.exports = {
-	title: 'HIPPO 🦛',
+	title: 'Hippo ☁️',
 	description: '记录一些东西',
 	base: "/static_page/",
 	head: [
@@ -17,7 +17,6 @@ module.exports = {
 		// displayAllHeaders: true, // 默认值：false
 		lastUpdated: 'Last Updated',
 		sidebar: {
-			
 			'/Philosophy/': [
 				'',     /* /foo/ */
 				'宋明理学15讲',  /* /foo/one.html */
@@ -55,7 +54,12 @@ module.exports = {
 				'',
 				// 'DIP',
 				'iOS-Demo'
-			]
+			],
+			'/' : [
+				'',
+				'ABOUT',
+				'Sponsor'
+			],
 			// '/page-a',
 			// ['/page-b', 'Explicit link text']
 		},
@@ -106,7 +110,7 @@ module.exports = {
 			},
 			{ text: 'Others 😊', items : 
 				[
-					{text:'杂谈', link: '/Others/'},
+					{text:'Others', link: '/Others/'},
 					{text:'更新部署', link: '/Others/更新部署'},
 					// {text: '博客列表', link:'/杂谈/博客列表'},
 					{text: '记录', items: [
