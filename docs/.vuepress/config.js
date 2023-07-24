@@ -145,6 +145,10 @@ module.exports = {
 			clientSecret: 'f56fa0ce4f944c59945ede9c8918ea3d2ee203ff',
 			// autoCreateIssue: true
 		},
+		'@vuepress/google-analytics':
+		{
+			'ga': 'G-5P2R53WFZL' //替换成自己实际申请的ID
+		}
 	}
 // 	plugins: {
 //     '@vssue/vuepress-plugin-vssue': { // 评论插件
