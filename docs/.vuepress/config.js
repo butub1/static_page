@@ -120,7 +120,7 @@ module.exports = {
 					]},
 				]
 			},
-			{ text: 'github', link: 'https://github.com/butub1/static_page' },
+			{ text: 'Github', link: 'https://github.com/butub1/static_page' },
 		],
 		// sidebar: 'auto'
 	},
