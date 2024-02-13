@@ -98,6 +98,7 @@ module.exports = {
 					{ text: '阅读笔记', items: [
 						{ text: '宋明理学15讲', link: '/Philosophy/宋明理学15讲' },
 						{ text: '新教伦理与资本主义精神', link: '/Philosophy/新教伦理与资本主义精神' },
+						{ text: '基督教故事十则与相关艺术作品', link: '/Philosophy/基督教故事十则与相关艺术作品' },
 						// { text: '道德情操论', link: '/Philosophy/道德情操论'}
 					]},
 					{ text: '我的想法', items:[
