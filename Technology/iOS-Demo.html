@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>iOS-Demo 项目及注入方式 | Hippo ☁️</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/static_page/logo.png">
+    <meta name="description" content="记录一些东西">
+    
+    <link rel="preload" href="/static_page/assets/css/0.styles.01b3f448.css" as="style"><link rel="preload" href="/static_page/assets/js/app.ecc8d6d4.js" as="script"><link rel="preload" href="/static_page/assets/js/2.6f374f29.js" as="script"><link rel="preload" href="/static_page/assets/js/21.5dfc2f03.js" as="script"><link rel="prefetch" href="/static_page/assets/js/10.f7a9db1e.js"><link rel="prefetch" href="/static_page/assets/js/11.655481c7.js"><link rel="prefetch" href="/static_page/assets/js/12.bbf336b7.js"><link rel="prefetch" href="/static_page/assets/js/13.8bd37448.js"><link rel="prefetch" href="/static_page/assets/js/14.bea6ccee.js"><link rel="prefetch" href="/static_page/assets/js/15.e6066554.js"><link rel="prefetch" href="/static_page/assets/js/16.54101596.js"><link rel="prefetch" href="/static_page/assets/js/17.bf1cfb60.js"><link rel="prefetch" href="/static_page/assets/js/18.cb3ed05a.js"><link rel="prefetch" href="/static_page/assets/js/19.e1d13bfd.js"><link rel="prefetch" href="/static_page/assets/js/20.865950b7.js"><link rel="prefetch" href="/static_page/assets/js/22.7f31943a.js"><link rel="prefetch" href="/static_page/assets/js/23.09aac35b.js"><link rel="prefetch" href="/static_page/assets/js/24.072f13df.js"><link rel="prefetch" href="/static_page/assets/js/25.756282c1.js"><link rel="prefetch" href="/static_page/assets/js/26.8061202e.js"><link rel="prefetch" href="/static_page/assets/js/27.270a0a92.js"><link rel="prefetch" href="/static_page/assets/js/28.017dc8cc.js"><link rel="prefetch" href="/static_page/assets/js/29.f1b22196.js"><link rel="prefetch" href="/static_page/assets/js/3.7099dd68.js"><link rel="prefetch" href="/static_page/assets/js/30.7d37bb5a.js"><link rel="prefetch" href="/static_page/assets/js/31.0186a17b.js"><link rel="prefetch" href="/static_page/assets/js/32.5dd05710.js"><link rel="prefetch" href="/static_page/assets/js/33.46ad45ad.js"><link rel="prefetch" href="/static_page/assets/js/34.82938be2.js"><link rel="prefetch" href="/static_page/assets/js/35.96d2028c.js"><link rel="prefetch" href="/static_page/assets/js/36.e274121f.js"><link rel="prefetch" href="/static_page/assets/js/37.278f5c7f.js"><link rel="prefetch" href="/static_page/assets/js/38.fcb88521.js"><link rel="prefetch" href="/static_page/assets/js/39.aeced8c4.js"><link rel="prefetch" href="/static_page/assets/js/4.22ef053b.js"><link rel="prefetch" href="/static_page/assets/js/40.f9448ab4.js"><link rel="prefetch" href="/static_page/assets/js/5.a4d6a358.js"><link rel="prefetch" href="/static_page/assets/js/6.acc5f195.js"><link rel="prefetch" href="/static_page/assets/js/7.7d458c87.js"><link rel="prefetch" href="/static_page/assets/js/8.57594a85.js"><link rel="prefetch" href="/static_page/assets/js/9.c45e563a.js">
+    <link rel="stylesheet" href="/static_page/assets/css/0.styles.01b3f448.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/static_page/" class="home-link router-link-active"><img src="/static_page/logo.png" alt="Hippo ☁️" class="logo"> <span class="site-name can-hide">Hippo ☁️</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/static_page/" class="nav-link">
+  Home 🏠
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="iOS 🍎" class="dropdown-title"><span class="title">iOS 🍎</span> <span class="arrow down"></span></button> <button type="button" aria-label="iOS 🍎" class="mobile-dropdown-title"><span class="title">iOS 🍎</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/static_page/iOS/" class="nav-link">
+  iOS
+</a></li><li class="dropdown-item"><h4>
+          翻译
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/static_page/iOS/UIImageView翻译.html" class="nav-link">
+  UIImageView 翻译
+</a></li><li class="dropdown-subitem"><a href="/static_page/PG-ViewController/" class="nav-link">
+  PG-ViewController 翻译
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Technology 🌟" class="dropdown-title"><span class="title">Technology 🌟</span> <span class="arrow down"></span></button> <button type="button" aria-label="Technology 🌟" class="mobile-dropdown-title"><span class="title">Technology 🌟</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/static_page/Technology/" class="nav-link router-link-active">
+  Technology
+</a></li><li class="dropdown-item"><h4>
+          Projects
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/static_page/Technology/iOS-Demo.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  iOS-Demo
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Philosophy 🤔" class="dropdown-title"><span class="title">Philosophy 🤔</span> <span class="arrow down"></span></button> <button type="button" aria-label="Philosophy 🤔" class="mobile-dropdown-title"><span class="title">Philosophy 🤔</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/static_page/Philosophy/" class="nav-link">
+  Philosophy
+</a></li><li class="dropdown-item"><h4>
+          阅读笔记
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/static_page/Philosophy/宋明理学15讲.html" class="nav-link">
+  宋明理学15讲
+</a></li><li class="dropdown-subitem"><a href="/static_page/Philosophy/新教伦理与资本主义精神.html" class="nav-link">
+  新教伦理与资本主义精神
+</a></li><li class="dropdown-subitem"><a href="/static_page/Philosophy/基督教故事十则与相关艺术作品.html" class="nav-link">
+  基督教故事十则与相关艺术作品
+</a></li></ul></li><li class="dropdown-item"><h4>
+          我的想法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/static_page/Philosophy/解释世界.html" class="nav-link">
+  解释世界
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Others 😊" class="dropdown-title"><span class="title">Others 😊</span> <span class="arrow down"></span></button> <button type="button" aria-label="Others 😊" class="mobile-dropdown-title"><span class="title">Others 😊</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/static_page/Others/" class="nav-link">
+  Others
+</a></li><li class="dropdown-item"><!----> <a href="/static_page/Others/更新部署.html" class="nav-link">
+  更新部署
+</a></li><li class="dropdown-item"><h4>
+          记录
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/static_page/Others/Memory.html" class="nav-link">
+  Memory
+</a></li><li class="dropdown-subitem"><a href="/static_page/Others/观影记录.html" class="nav-link">
+  观影记录
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/butub1/static_page" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/static_page/" class="nav-link">
+  Home 🏠
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="iOS 🍎" class="dropdown-title"><span class="title">iOS 🍎</span> <span class="arrow down"></span></button> <button type="button" aria-label="iOS 🍎" class="mobile-dropdown-title"><span class="title">iOS 🍎</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/static_page/iOS/" class="nav-link">
+  iOS
+</a></li><li class="dropdown-item"><h4>
+          翻译
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/static_page/iOS/UIImageView翻译.html" class="nav-link">
+  UIImageView 翻译
+</a></li><li class="dropdown-subitem"><a href="/static_page/PG-ViewController/" class="nav-link">
+  PG-ViewController 翻译
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Technology 🌟" class="dropdown-title"><span class="title">Technology 🌟</span> <span class="arrow down"></span></button> <button type="button" aria-label="Technology 🌟" class="mobile-dropdown-title"><span class="title">Technology 🌟</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/static_page/Technology/" class="nav-link router-link-active">
+  Technology
+</a></li><li class="dropdown-item"><h4>
+          Projects
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/static_page/Technology/iOS-Demo.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  iOS-Demo
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Philosophy 🤔" class="dropdown-title"><span class="title">Philosophy 🤔</span> <span class="arrow down"></span></button> <button type="button" aria-label="Philosophy 🤔" class="mobile-dropdown-title"><span class="title">Philosophy 🤔</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/static_page/Philosophy/" class="nav-link">
+  Philosophy
+</a></li><li class="dropdown-item"><h4>
+          阅读笔记
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/static_page/Philosophy/宋明理学15讲.html" class="nav-link">
+  宋明理学15讲
+</a></li><li class="dropdown-subitem"><a href="/static_page/Philosophy/新教伦理与资本主义精神.html" class="nav-link">
+  新教伦理与资本主义精神
+</a></li><li class="dropdown-subitem"><a href="/static_page/Philosophy/基督教故事十则与相关艺术作品.html" class="nav-link">
+  基督教故事十则与相关艺术作品
+</a></li></ul></li><li class="dropdown-item"><h4>
+          我的想法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/static_page/Philosophy/解释世界.html" class="nav-link">
+  解释世界
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Others 😊" class="dropdown-title"><span class="title">Others 😊</span> <span class="arrow down"></span></button> <button type="button" aria-label="Others 😊" class="mobile-dropdown-title"><span class="title">Others 😊</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/static_page/Others/" class="nav-link">
+  Others
+</a></li><li class="dropdown-item"><!----> <a href="/static_page/Others/更新部署.html" class="nav-link">
+  更新部署
+</a></li><li class="dropdown-item"><h4>
+          记录
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/static_page/Others/Memory.html" class="nav-link">
+  Memory
+</a></li><li class="dropdown-subitem"><a href="/static_page/Others/观影记录.html" class="nav-link">
+  观影记录
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/butub1/static_page" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/static_page/Technology/" aria-current="page" class="sidebar-link">Technology</a></li><li><a href="/static_page/Technology/iOS-Demo.html" aria-current="page" class="active sidebar-link">iOS-Demo 项目及注入方式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/static_page/Technology/iOS-Demo.html#_1-需求" class="sidebar-link">1. 需求</a></li><li class="sidebar-sub-header"><a href="/static_page/Technology/iOS-Demo.html#_2-设计" class="sidebar-link">2. 设计</a></li><li class="sidebar-sub-header"><a href="/static_page/Technology/iOS-Demo.html#_3-实现" class="sidebar-link">3. 实现</a></li><li class="sidebar-sub-header"><a href="/static_page/Technology/iOS-Demo.html#_4-使用" class="sidebar-link">4. 使用</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="ios-demo-项目及注入方式"><a href="#ios-demo-项目及注入方式" class="header-anchor">#</a> iOS-Demo 项目及注入方式</h1> <p>在接触<code>iOS</code>一年多之后，明显感觉到， <code>Objc</code>带有一种青黄不接的感觉。一方面市面上的大多数app基于<code>Swift</code> 构建，另一方面在国内，大型的 App 还在继续使用 <code>Objc</code> 构建， 团队中的 iOS 新人对于 iOS 开发的兴趣稍显欠缺，因此萌生了些一个 Demo App ， 用来方便地构建 Demo，来做各种各样的演示。</p> <ul><li>Project Repository : <a href="https://github.com/butub1/iOS-Demo" target="_blank" rel="noopener noreferrer">https://github.com/butub1/iOS-Demo<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="_1-需求"><a href="#_1-需求" class="header-anchor">#</a> 1. 需求</h2> <p>需求很简单：<code>方便地构建 ViewController</code></p> <ol><li>要方便书写，避免重复劳动，避免如下情况:<div class="language-objc line-numbers-mode"><pre class="language-objc"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token string">&quot;SceneDelegate.h&quot;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token string">&quot;DMBaseViewController.h&quot;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token string">&quot;BDMSyntaxController.h&quot;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token string">&quot;VerticalSlidingViewController.h&quot;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token string">&quot;DMHitTestViewController.h&quot;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token string">&quot;DMCollectionViewDragViewController.h&quot;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token string">&quot;DMLayoutViewController.h&quot;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token string">&quot;DMPassThroughViewController.h&quot;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token string">&quot;DMSampleViewController.h&quot;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></li> <li>要有说明文字，要有 icon、author、hyperlink</li> <li>要易于检索，搞个简单的搜索的VC， 方便跳转</li> <li>要解耦，或者容易修改，上述的信息，在注入后，要能容易拿取到。</li></ol> <h2 id="_2-设计"><a href="#_2-设计" class="header-anchor">#</a> 2. 设计</h2> <p>因为不想分散多处写注入代码， 最好是能像注解一样，只做一个操作，就注入。</p> <div class="language-objc line-numbers-mode"><pre class="language-objc"><code><span class="token operator">@</span><span class="token function">registerItem</span><span class="token punctuation">(</span><span class="token string">&quot;Sample.Button.Basic&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">@interface</span> DMSampleViewController
+<span class="token keyword">@end</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>但是在 Objc 中，确实没有找到比较方便的实现，但是又非常想要这种效果。考虑过几种实现:</p> <p>VC 继承的方式进行注入 --&gt; Objc 不能多继承, 限制了 Demo 的能力</p> <p>接口注入到全局 mountArray --&gt; 添加操作需要运行时完成，否则需要静态注入。</p> <div class="language-objc line-numbers-mode"><pre class="language-objc"><code><span class="token comment">/// in mount file</span>
+<span class="token keyword">static</span> NSArray<span class="token operator">&lt;</span>id<span class="token operator">&lt;</span>DMInjectProtocol<span class="token operator">&gt;&gt;</span> <span class="token operator">*</span>mountArray <span class="token operator">=</span> <span class="token operator">@</span><span class="token punctuation">[</span>
+    <span class="token punctuation">[</span>DMSampleViewController class<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+<span class="token comment">/// in DMSampleViewController.m</span>
+<span class="token keyword">@interface</span> <span class="token function">DMSampleViewController</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>DMInjectProtocol<span class="token operator">&gt;</span>
+<span class="token keyword">@end</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>因此不得不找些运行时注入的方式，或者编译预处理的操作，考虑过</p> <ol><li>LazyRegister， 注入函数指针到 data 段，会在 section 引入的时候注入，运行时机可选。</li> <li>load 方法， 运行时机在 main 函数之前，但是需要写 C 方法。</li> <li>Category 运行时注入，生成特定函数，但是 Demo 多了之后，会生成很多小Category. <code>【Selected】</code><br>
+因为是 demo 项目，没有必要过度设计，所以选择了简单的方式实现，遇到问题再优化。</li></ol> <h2 id="_3-实现"><a href="#_3-实现" class="header-anchor">#</a> 3. 实现</h2> <p>dm_registerDemo 宏 最终生成”一条分类“，一条 : ) 合乎文法 : )</p> <div class="language-objc line-numbers-mode"><pre class="language-objc"><code><span class="token keyword">@interface</span> <span class="token function">DMRegisterCenter</span><span class="token punctuation">(</span> DMSampleViewController <span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>user_registerItemsFor_DMSampleViewController<span class="token punctuation">;</span><span class="token keyword">@end</span><span class="token punctuation">;</span> <span class="token keyword">@implementation</span> <span class="token function">DMRegisterCenter</span><span class="token punctuation">(</span> DMSampleViewController <span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>user_registerItemsFor_DMSampleViewController<span class="token punctuation">{</span> <span class="token punctuation">[</span><span class="token keyword">self</span> registerClass<span class="token punctuation">:</span><span class="token string">@&quot;DMSampleViewController&quot;</span> withBlock<span class="token punctuation">:</span><span class="token operator">^</span><span class="token punctuation">(</span>DMRegisterItem <span class="token operator">*</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">{</span> item<span class="token punctuation">.</span>identifier <span class="token operator">=</span> <span class="token string">@&quot;Sample.UIButton&quot;</span><span class="token punctuation">;</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token keyword">@end</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>我很喜欢这个 tricky 的实现</p></blockquote> <p>在 RegisterCenter 中会去遍历自己的实例方法，找到用户注入的方法(@user_ 开头)</p> <div class="language-objc line-numbers-mode"><pre class="language-objc"><code><span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>loadAllItemsFromCategories
+<span class="token punctuation">{</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> count<span class="token punctuation">;</span>
+    Method <span class="token operator">*</span>methods <span class="token operator">=</span> <span class="token function">class_copyMethodList</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token keyword">self</span> class<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        SEL methodSelector <span class="token operator">=</span> <span class="token function">method_getName</span><span class="token punctuation">(</span>methods<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        NSString <span class="token operator">*</span>methodName <span class="token operator">=</span> <span class="token punctuation">[</span>NSString stringWithUTF8String<span class="token punctuation">:</span><span class="token function">sel_getName</span><span class="token punctuation">(</span>methodSelector<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">[</span>methodName hasPrefix<span class="token punctuation">:</span><span class="token string">@&quot;user_&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token punctuation">[</span><span class="token keyword">self</span> performSelector<span class="token punctuation">:</span>methodSelector<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>methods<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="_4-使用"><a href="#_4-使用" class="header-anchor">#</a> 4. 使用</h2> <p>这就很简单了， 引入宏，注册想要注册的<code>ViewController</code></p> <div class="language-objc line-numbers-mode"><pre class="language-objc"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token string">&quot;DMSampleViewController.h&quot;</span></span>
+
+<span class="token comment">// 1. import Macros</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">import</span> <span class="token string">&quot;DMMacros.h&quot;</span> </span>
+
+<span class="token comment">// 2. register an item corresponding to your view controller</span>
+<span class="token function">dm_registerDemo</span><span class="token punctuation">(</span>DMSampleViewController<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    item<span class="token punctuation">.</span>identifier <span class="token operator">=</span> <span class="token string">@&quot;Sample.UIButton&quot;</span><span class="token punctuation">;</span> <span class="token comment">// identifier required</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 3. enjoy coding with this view controller :)</span>
+<span class="token keyword">@interface</span> <span class="token function">DMSampleViewController</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">@end</span>
+
+<span class="token keyword">@implementation</span> DMSampleViewController
+<span class="token operator">-</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>viewDidLoad
+<span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token keyword">super</span> viewDidLoad<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">self</span><span class="token punctuation">.</span>view<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token punctuation">[</span>UIColor greenColor<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">@end</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>然后做一个简单的<code>table list</code>, 获取所有以同样方式注册进来的VC，点击切换。</p> <p><img src="/static_page/assets/img/demo.d63052fc.gif" alt="demo.gif"></p> <hr> <!----></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/static_page/Technology/" class="prev router-link-active">
+        Technology
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/static_page/assets/js/app.ecc8d6d4.js" defer></script><script src="/static_page/assets/js/2.6f374f29.js" defer></script><script src="/static_page/assets/js/21.5dfc2f03.js" defer></script>
+  </body>
+</html>
